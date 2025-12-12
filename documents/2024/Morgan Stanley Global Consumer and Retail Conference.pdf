@@ -1,0 +1,521 @@
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+ 
+ 
+ 
+ 
+
+
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+	<meta name="robots" content="none" />
+	<title>Kimberly-Clark Corporation - 1698700</title>
+	
+	<link href="/viewer/style/common.css?32709-20251121-2318" rel="stylesheet" type="text/css" />
+	<style type="text/css">
+
+.ui-state-active, .ui-widget-header .ui-state-active, .ui-widget-content .ui-state-active, .ui-state-focus, .ui-state-highlight, .ui-widget-header .ui-state-focus, .ui-widget-header .ui-state-highlight, .ui-widget-content .ui-state-focus, .ui-widget-content .ui-state-highlight,.ui-slider-horizontal .ui-slider-range {background-color:#012B51 !important; font-weight: bold; color:#ffffff !important}
+.ui-state-active a, .ui-state-active a:link{color:#ffffff !important}
+.ui-state-active .ui-icon{background-image: url(style/images/ui-icons_ffffff_256x240.png)}
+.vjs-default-skin .vjs-control:focus:before, .vjs-default-skin .vjs-control:hover:before {  text-shadow: none !important; color:#012B51 !important; }
+.jumppointColor{
+	color: #012B51 !important;
+}
+
+:root {
+  --background-color:#ffffff;
+  --banner-background-color:#ffffff;
+  --highlight-color:#012B51;
+  --highlight-contrast-color:#ffffff;
+}
+
+	/*********** Backgound Color CSS  ************/
+	
+	body{background-color:#ffffff !important;}
+	
+	
+	
+   .regLayout7 .regContentWidth,
+   .regLayout8 .regContentWidth,
+   .shared-elements-2q2021 .regDateBar,
+   .shared-elements-2q2021 #eventDisplayTitle,
+   .hideTitleAndDateBar #eventDisplayTitle,
+   .hideTitleAndDateBar #eventDateAndTime{
+     	color:#000000;
+   }
+
+		#regContentContainer{background-color:transparent !important;}
+		#reg_footer_disclaimer {margin-left:20px; width:720px}
+	
+		#viewer_banner,#eventBanner{background-color:#ffffff !important;}
+	
+
+/* LAYOUT 4 ONLY */
+ 
+
+     html {background-color:#333}
+ 
+	 
+     	 #regContentBar .regContentWidth {color:#000000}
+		   
+		   .splashTabs + #tabs_content .tab_content iframe,
+		   .splashTabs + #tabs_content #documentuploads{
+		   		color:#000000; 
+		   		background-color:transparent !important;
+		   }
+		   
+     	 #regContentBar label{
+		   	color:#000000;
+		 }
+       
+  
+ 	 
+  		#regBannerBar {background-color:#ffffff!important}
+	   
+	 
+		
+			/* Highlight Color */
+			a:active, a:link, a:visited {font-weight:bold; text-decoration: none; color:#012B51}
+			a:hover {color: #333}
+
+			input.buttonSubmit, button.buttonSubmit, a.buttonSubmit {color:#ffffff !important; background-color:#012B51 !important;}
+			.view_link a:hover {color:#012B51!important}
+		
+			#regTitleBar {background-color:#012B51!important}
+			#regTitleBar h1{color:#ffffff;}
+			#regFooterBar {border-color:#012B51!important}
+			.grayBox{PADDING-RIGHT: 5px;PADDING-LEFT: 5px;HEIGHT: 22px;BACKGROUND-COLOR: #012B51;color:#ffffff;}
+			.grayBox a{color:#ffffff}
+
+			.shared-elements-2q2021 .regDateBar .reminderButton a:first-child,
+			.shared-elements-2q2021 .regDateBar .reminderButton>a:active,
+			.shared-elements-2q2021 .regDateBar .reminderButton>a:link, 
+			.shared-elements-2q2021 .regDateBar .reminderButton>a:visited,
+			.shared-elements-2q2021 #reminderButtonSub,
+			.hideTitleAndDateBar #regDateBar .reminderButton a{
+				background-color: #012B51 !important;
+				color:#ffffff !important;
+			}
+
+			/* day tabs in new portals */
+			#portal_daytabs_main .ui-tabs-nav .ui-state-active{
+			  border-top: 4px #012B51 solid;
+			}
+			
+			.portalTabMain .ui-state-default a,
+			.portalTabMain .ui-state-default a:link{
+				color:#ffffff;
+			}
+		 
+		  
+			#regDateBar, #reminderButtonSub {background-color:#012B51!important}
+			#regDateBar h2{color:#ffffff}
+			#regDateBar .reminderButton a:active, #regDateBar .reminderButton a:link, #regDateBar .reminderButton a:visited {color:#ffffff}
+			#reminderButtonSub a:link {color:#ffffff}
+			.oliveBox{PADDING: 5px 8px;HEIGHT: 15px;FONT-WEIGHT: bold;background-color:#012B51;color:#ffffff}
+		  
+    
+    /***** Layout 6+ only *********/
+	
+					
+			/****** FORM CONTAINER CSS ***********/
+			
+				 
+		    .regLayout6 label,
+		    .regLayout6 .regForm{ 
+	   			color:  #fff !important;
+	   		}
+     		
+     		.regLayout6 .regForm{
+     			background-color:  null !important;
+     		}	 
+				 
+			.shared-elements-2q2021 .regForm{ 
+				background-color:  null !important;
+				color:  #fff !important;
+			}
+			
+			.shared-elements-2q2021 .regForm label{
+			    color:  #fff !important;
+			}
+			
+			@media (min-width: 780px){
+			    .regLayout9 .regForm,
+			    .regLayout10 .regForm{
+			        border: null 2vw solid;
+			    }
+			}	 
+		
+			
+		
+	/***** Layout 5 only *********/
+		
+	
+	.portalTabMain .view_calendar{
+	    color: #ffffff !important;
+	}
+	
+	/* Portal 2 */
+	.splashTabs{
+	    display: flex;
+        justify-content: center;
+        background-color: #006cff !important;
+	    background-color: #012B51 !important;
+	    border: none !important;
+	}
+	
+	.splashTabs li{
+	    background-color: #012B51 !important;
+	}
+	
+	.splashTabs .ui-state-active,
+	.splashTabs .ui-state-default{
+	    background-color: #006cff !important;
+	    background-color: #012B51 !important;
+	}
+	
+	.splashTabs .ui-state-active a{
+	    border-bottom: #ffffff 4px solid;
+	}
+	
+	.splashTabs .ui-state-active a, 
+	.splashTabs .ui-state-active a:link,
+	.splashTabs .ui-state-default a, 
+	.splashTabs .ui-state-default a:link{
+	    color: #ffffff !important;
+	}
+	
+	@media only screen and (max-width: 768px){
+	   .splashTabs{
+	        display: none;
+	   }
+	}
+
+
+/* ALL LAYOUTS - Accounting for Transparencies */
+.agendaLink:hover, .agendaLinkActive{
+	color: #ffffff;
+	opacity: .5;
+}
+
+
+#regContentContainer {-webkit-border-top-left-radius: 0px; -webkit-border-top-right-radius: 0px; -moz-border-radius-topleft: 0px; -moz-border-radius-topright: 0px; border-top-left-radius: 0px;  border-top-right-radius: 0px;}
+
+	.regLayout10 .contentContainer {
+    background-color: #fff;
+    margin-bottom: 25px;
+}
+.shared-elements-2q2021 .regForm {
+    border-radius: 12px !important;
+}
+.shared-elements-2q2021 .regForm input.buttonSubmit, .shared-elements-2q2021 .regForm button.buttonSubmit, .shared-elements-2q2021 .regForm a.buttonSubmit, .shared-elements-2q2021 .regForm a:link.buttonSubmit, .shared-elements-2q2021 .regForm a:visited.buttonSubmit {
+    border-radius: 12px;
+ }
+.regLayout10 .regDateBar .reminderButton a:active, .regLayout10 .regDateBar .reminderButton a:link, .regLayout10 .regDateBar .reminderButton a:visited, .regLayout9 .regDateBar .reminderButton a:active, .regLayout9 .regDateBar .reminderButton a:link, .regLayout9 .regDateBar .reminderButton a:visited {
+border-radius: 12px;
+}
+
+.wide-column-layouts .regTitleBar h1 {
+    font-size: 2.0em;
+    font-weight: 600;
+}
+	
+
+@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) and (orientation:portrait) {
+#registerFieldsTable, #registerFieldsTable td {width:100%}
+#registerFieldsTable select, #registerFieldsTable input {max-width:100%}
+}
+/* reglayout : 10 */
+/* Do not put any CSS below the media queries */
+</style>
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+ <body id="regPageBody">
+    <!--  ==========================================  Layout 1,2,3   ================================================================================ -->
+	
+	<!-- ==========================================  Layout 4+   ================================================================================ -->
+	  <div class="pageContainer hideTitleAndDateBar shared-elements-2q2021" id="regLayout4">
+        	<!--<div class="pageContent4">-->
+        <!--NEW--><div id="regBannerBar">
+        	<!--NEW--><div class="regContentWidth">   
+			  
+<style>
+	/********************
+	  	   Banners
+	********************/
+	.banners *{
+    	margin: 0;
+       	box-sizing: border-box;
+    }
+    
+	.banners{
+		display: flex;
+		justify-content: flex-end;
+	}
+	#eventexit{
+		display: flex;
+		width: auto !important;
+		justify-content: flex-end;
+	}
+
+	#banner, #bannerright{
+		max-width: 100%;
+	}
+	
+	.rightBannerContainer{
+		justify-content: flex-end;
+	}
+	
+	.leftBannerContainer{
+        flex-grow: 1
+	}
+	
+	.rightBannerContainer, .leftBannerContainer{
+		align-self: center;
+	}
+	
+	.bannerBtns{
+		width: 22px !important;
+		height: 22px !important;
+	    border-radius: 22px;
+	}
+	
+	.helpBtn{
+		background-position: -44px -141px !important;
+	}
+	
+	.closeBtn{
+		background-position: -93px -125px !important;
+	}
+	
+	.bannerMargins{
+		margin: 4px 3px;
+	}
+	
+	/********************
+	  IE Specific Hack
+	********************/
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		.rightBannerContainer, .leftBannerContainer{
+			width: 100%;
+		}
+		#bannerright{
+			float: right;
+		}
+		/*.bannerMargins{
+			width: 25px !important;
+		}*/
+		#eventexit{
+			flex-basis: 120px;
+		}	
+	}
+</style>
+	
+		<section class="banners bannersVisible" id="viewer_banner" role="banner" aria-label="Logos">
+		
+		
+			<div class="leftBannerContainer">
+				<img id="banner" src="https://cache.webcasts.com/content/conf001/1698700/content/9008f216189837d23c4af1e4b0cbcba9fdb1f5d1/banner/NewMSLogo20221021112008.png" alt="">
+			</div>
+		
+		
+	
+
+
+  
+</section>  
+        	<!--NEW--></div>
+        <!--NEW--></div>
+        
+        
+        
+          <div id="regDateBar">
+        	<div class="regContentWidth">
+            	<h2 id="eventDateAndTime">Tue, Dec 3, 2024 1:27 PM EST{LOCAL_TZ}   </h2>
+            </div>
+        </div> 
+        
+			<!--<div id="regContentContainer_4">-->
+            <!--NEW--><div id="regContentBar">
+        	<!--NEW--><div class="regContentWidth">
+				<!--<div id="regEventText">-->
+					<br />
+					<br />This presentation is no longer available.
+					<br />
+					<br />
+            
+                <div class="clear"></div>
+                 
+                	<!--</div>-->
+        	<!--NEW--></div>
+        <!--NEW--></div>
+                  <!--<div id="reg_footer">-->
+        <!--NEW--><div id="regFooterBar" role="contentinfo" aria-label="Disclaimer and Footer">
+        	<!--NEW--><div class="regContentWidth">
+        		<span id="regPageHelp"><a href="#" id="linkFAQ" class="footerLink">FAQs and System Test</a>&nbsp; &nbsp; </span>
+			     
+                   <div id="tpBug">
+                   <a id="webcastby" href="https://www.globalmeet.com" target="_blank"><img src="/viewer/images/webcastbygm.png" border="0" hspace="0" vspace="0" alt="Webcast by GlobalMeet" /></a> 
+                   </div>
+                   <br /><br />
+                
+      			
+        	<!--NEW--></div>
+        <!--NEW--></div>
+		<!--</div>-->
+             <!--</div>-->
+        </div>
+	<!-- ========================================== End of Layout 4+ ============================================================================ -->
+	
+     <iframe src="/viewer/blank.html" name="helpPopup" id="helpPopup" frameborder="0" border="0" scrolling="auto" ALLOWTRANSPARENCY="true"></iframe>
+	<div id="overlay"></div>
+	<form name="rettoreg" id="rettoreg" action="../starthere.jsp?ei=1698700" method="post">
+		<input type="hidden" name="autologin" value="false"> 
+	</form>
+	<ul id="reminderButtonSub" style="display: none;"><li id="reminderButtonSubVcs"><a href="#" alt="Outlook">Outlook &nbsp; &#10095;</a></li><li id="reminderButtonSubGoogle"><a href="#" alt="Google">Google  &nbsp; &#10095;</a></li></ul>
+	<script type="text/javascript" src="/viewer/include/jquery-3.6.4.min.js"></script>
+<script type="text/javascript" src="/viewer/include/jquery-ui.1.12.1.min.js"></script>
+<script type="text/javascript" src="/viewer/include/jquery-migrate-1.4.1.min.js"></script>
+<script type="text/javascript" src="/viewer/include/jquery.form.js"></script>
+
+	<script type="text/javascript">	
+	
+	var sLocalTZPlaceholder = '{LOCAL_TZ}';
+	
+	function closeHelp(){
+		   $("#helpPopup").attr("src","/viewer/blank.html");
+		   $("#helpPopup").hide();
+		   $("#overlay").hide();
+	}
+	$(document).ready(function() {
+		
+		let $dateBarDt = $("#eventDateAndTime");
+	 	let replaceString = '';
+		try{
+			let formattedLocalEventScheduleDt='';
+			const TIMEZONE_ID = 'US/Eastern';
+			const sEventScheduleMillis = 1733250420000;
+			const date = new Date(sEventScheduleMillis);
+			const locale_tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+			
+			const options_date = {weekday: 'short',month: "short",day:'numeric',year: "numeric"};
+			const options_time = {hour: "numeric",minute: "numeric"};
+			const locale_tz_short = Intl.DateTimeFormat("en", {...options_time,timeZoneName: "short",timeZone: locale_tz}).formatToParts(date).at(-1).value.toUpperCase();
+			
+			console.log(TIMEZONE_ID,locale_tz,locale_tz_short);
+			
+			let formattedLocalEventScheduleDt1 = Intl.DateTimeFormat("en", {...options_date,timeZone: locale_tz}).format(date);
+			let formattedLocalEventScheduleDt2 = Intl.DateTimeFormat("en", {...options_date,timeZone: TIMEZONE_ID}).format(date);
+			//if date is not same, display entire date else check time 
+			if(formattedLocalEventScheduleDt1!==formattedLocalEventScheduleDt2){
+				formattedLocalEventScheduleDt = Intl.DateTimeFormat("en",  {...options_date,timeZone: locale_tz}).format(date)	+ ' '+ Intl.DateTimeFormat("en",  {...options_time,timeZone: locale_tz}).format(date);
+			}else{
+				formattedLocalEventScheduleDt1 = Intl.DateTimeFormat("en", {...options_time,timeZone: locale_tz}).format(date);
+				formattedLocalEventScheduleDt2 = Intl.DateTimeFormat("en", {...options_time,timeZone: TIMEZONE_ID}).format(date);
+				
+				if(formattedLocalEventScheduleDt1!==formattedLocalEventScheduleDt2){
+					formattedLocalEventScheduleDt = Intl.DateTimeFormat("en",  {...options_time,timeZone: locale_tz}).format(date);
+				}
+			}
+			if(formattedLocalEventScheduleDt){
+				const tz = locale_tz_short.startsWith('GMT')?locale_tz:locale_tz_short;
+				formattedLocalEventScheduleDt = formattedLocalEventScheduleDt + ' ' + tz; 
+				replaceString = ' (' + formattedLocalEventScheduleDt + ')';
+				//need to set form field so it gets forwarded to event.jsp
+				$("#userLocalTZDate").val(formattedLocalEventScheduleDt);			
+
+			}
+			
+		}catch(e){
+		    console.log('Exception generating user local time');
+		    console.log(e);
+		}
+		//always remove placeholder
+		if($dateBarDt && $dateBarDt.html()){
+		    const dtText = $dateBarDt.html().replace(sLocalTZPlaceholder,replaceString);
+		    $dateBarDt.html(dtText);
+		}
+		
+	    
+	    $(".buttonFAQ,#linkFAQ").click(function(){
+		   var helpsrc =  "/viewer/faq.jsp?mType=a&ei=1698700&ishtml5player=false&ishtml5slide=false&language=en-us";
+		   
+	   	   $("#helpPopup").attr("src",helpsrc);
+	   	   $("#helpPopup").show();
+	   	   $("#overlay").show();
+	   	   return false;
+		});
+		
+		$("#returntoreg_btn").live("click", function(){
+		   document.forms["rettoreg"].submit();
+		   return false;
+		});
+
+	var currentreminderlink = "";
+	var currentreminderid = "";
+	
+	function closecalendardiv(){
+		currentreminderlink = "";
+		currentreminderid = "";
+		$("#reminderButtonSub").slideUp('slow');
+
+	}
+	$(".reminderButton a").on("click",function(e) {
+		if($('#reminderButtonSub').is(':visible')){
+			closecalendardiv();
+			return false;
+		}
+		$("#reminderButtonSub").css({
+		     position:'absolute',
+		     top: $(this).offset().top + $(this).outerHeight(true),
+		     left: $(this).offset().left,
+		     width:$(this).outerWidth(true),
+		    zIndex:5000
+		 });
+		$(this).after($("#reminderButtonSub"));
+		$("#reminderButtonSub").slideDown();
+		
+		currentreminderlink = $(this).attr("href");
+	    currentreminderid = $(this).attr("id");
+	    if(currentreminderlink=="#" && currentreminderid!=undefined){
+	    	currentreminderlink = "/viewer/vcs.jsp?ei=" + currentreminderid.split("_")[1];
+	    }
+	    //console.log("currentreminderlink " + currentreminderlink + " currentreminderid " + currentreminderid);
+	    e.stopPropagation();
+	    return false;
+	})
+	$(".reminderButton").on("mouseleave", function(e) {
+		closecalendardiv();
+	});
+	
+	$("#reminderButtonSubVcs").on("click", function(e) {
+		window.open(currentreminderlink);
+		return false;
+	});
+	
+	$("#reminderButtonSubGoogle").on("click", function(e) {
+		window.open(currentreminderlink.replace("vcs.jsp","googlecal.jsp"),"googlecal");
+		return false;
+	});
+})
+</script>
+	 
+ </body>
+</html>

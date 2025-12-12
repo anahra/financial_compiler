@@ -1,0 +1,1182 @@
+
+
+
+
+
+
+
+
+
+
+
+<!DOCTYPE html>
+<html lang="en-us">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+
+
+<meta name="robots" content="none" />
+
+
+<title>Kimberly Clark Corporation - 1744233</title>
+
+<link href="/viewer/style/common.css?32601-20250927-0424" rel="stylesheet" type="text/css" />
+<style type="text/css">
+
+.ui-state-active, .ui-widget-header .ui-state-active, .ui-widget-content .ui-state-active, .ui-state-focus, .ui-state-highlight, .ui-widget-header .ui-state-focus, .ui-widget-header .ui-state-highlight, .ui-widget-content .ui-state-focus, .ui-widget-content .ui-state-highlight,.ui-slider-horizontal .ui-slider-range {background-color:#b0b0b0 !important; font-weight: bold; color:#000000 !important}
+.ui-state-active a, .ui-state-active a:link{color:#000000 !important}
+.ui-state-active .ui-icon{background-image: url(style/images/ui-icons_000000_256x240.png)}
+.vjs-default-skin .vjs-control:focus:before, .vjs-default-skin .vjs-control:hover:before {  text-shadow: none !important; color:#b0b0b0 !important; }
+.jumppointColor{
+	color: #b0b0b0 !important;
+}
+
+:root {
+  --background-color:#ffffff;
+  --banner-background-color:#ffffff;
+  --highlight-color:#b0b0b0;
+  --highlight-contrast-color:#000000;
+}
+
+	/*********** Backgound Color CSS  ************/
+	
+	body{background-color:#ffffff !important;}
+	
+	
+	
+   .regLayout7 .regContentWidth,
+   .regLayout8 .regContentWidth,
+   .shared-elements-2q2021 .regDateBar,
+   .shared-elements-2q2021 #eventDisplayTitle,
+   .hideTitleAndDateBar #eventDisplayTitle,
+   .hideTitleAndDateBar #eventDateAndTime{
+     	color:#000000;
+   }
+		
+		#regContentContainer{background-color:#ffffff !important;}
+	
+		#viewer_banner,#eventBanner{background-color:#ffffff !important;}
+	
+
+/* LAYOUT 4 ONLY */
+ 
+
+     html {background-color:#333}
+ 
+	   
+	 	   /********* REG CONTAINTER CSS ********/
+	 	   
+           #regContentBar {padding:0 20px} 
+		   #regContentBar .regContentWidth {padding:25px; width:850px; color:#000000;background-color:#ffffff !important;}
+		   
+		   .splashTabs + #tabs_content .tab_content iframe,
+		   .splashTabs + #tabs_content #documentuploads,
+		   .shared-elements-2q2021 .contentContainer{
+		   		color:#000000; 
+		   		background-color:#ffffff !important;
+		   }
+		   
+		   #regContentBar label{
+		   		color:#000000;
+		   }
+		   
+		   .reminderButtonPortal #reminderButtonSub{
+		   		background-color:#ffffff !important;
+		   	}
+		   	
+		   	.hideTitleAndDateBar .inRoomViewH1,
+		   	.hideTitleAndDateBar #regFormHeaderText,
+            .hideTitleAndDateBar #regFormWrapper label,
+            .hideTitleAndDateBar #pre_disclaimer{
+			    color: #000000; 
+			}
+		   
+		   @media only screen and (max-width: 768px), only screen and (max-device-width: 768px) and (orientation:portrait) {
+		   #regContentBar {padding:0!important}
+		   	#portal_checkbox{
+		   	   padding: 20px !important;
+		   	}
+		   }
+		   
+       
+  
+ 	 
+  		#regBannerBar {background-color:#ffffff!important}
+	   
+	 
+		
+			/* Highlight Color */
+			a:active, a:link, a:visited {font-weight:bold; text-decoration: none; color:#b0b0b0}
+			a:hover {color: #333}
+
+			input.buttonSubmit, button.buttonSubmit, a.buttonSubmit {color:#000000 !important; background-color:#b0b0b0 !important;}
+			.view_link a:hover {color:#b0b0b0!important}
+		
+			#regTitleBar {background-color:#b0b0b0!important}
+			#regTitleBar h1{color:#000000;}
+			#regFooterBar {border-color:#b0b0b0!important}
+			.grayBox{PADDING-RIGHT: 5px;PADDING-LEFT: 5px;HEIGHT: 22px;BACKGROUND-COLOR: #b0b0b0;color:#000000;}
+			.grayBox a{color:#000000}
+
+			.shared-elements-2q2021 .regDateBar .reminderButton a:first-child,
+			.shared-elements-2q2021 .regDateBar .reminderButton>a:active,
+			.shared-elements-2q2021 .regDateBar .reminderButton>a:link, 
+			.shared-elements-2q2021 .regDateBar .reminderButton>a:visited,
+			.shared-elements-2q2021 #reminderButtonSub,
+			.hideTitleAndDateBar #regDateBar .reminderButton a{
+				background-color: #b0b0b0 !important;
+				color:#000000 !important;
+			}
+
+			/* day tabs in new portals */
+			#portal_daytabs_main .ui-tabs-nav .ui-state-active{
+			  border-top: 4px #b0b0b0 solid;
+			}
+			
+			.portalTabMain .ui-state-default a,
+			.portalTabMain .ui-state-default a:link{
+				color:#000000;
+			}
+		 
+		  
+			#regDateBar, #reminderButtonSub {background-color:#000000!important}
+			#regDateBar h2{color:#ffffff}
+			#regDateBar .reminderButton a:active, #regDateBar .reminderButton a:link, #regDateBar .reminderButton a:visited {color:#ffffff}
+			#reminderButtonSub a:link {color:#ffffff}
+			.oliveBox{PADDING: 5px 8px;HEIGHT: 15px;FONT-WEIGHT: bold;background-color:#000000;color:#ffffff}
+		  
+    
+    /***** Layout 6+ only *********/
+	
+					
+			/****** FORM CONTAINER CSS ***********/
+			
+				 
+		    .regLayout6 label,
+		    .regLayout6 .regForm{ 
+	   			color:  #ffffff !important;
+	   		}
+     		
+     		.regLayout6 .regForm{
+     			background-color:  #000000 !important;
+     		}	 
+				 
+			.shared-elements-2q2021 .regForm{ 
+				background-color:  #000000 !important;
+				color:  #ffffff !important;
+			}
+			
+			.shared-elements-2q2021 .regForm label{
+			    color:  #ffffff !important;
+			}
+			
+			@media (min-width: 780px){
+			    .regLayout9 .regForm,
+			    .regLayout10 .regForm{
+			        border: #000000 2vw solid;
+			    }
+			}	 
+		
+			
+		
+	/***** Layout 5 only *********/
+		
+	
+	.portalTabMain .view_calendar{
+	    color: #000000 !important;
+	}
+	
+	/* Portal 2 */
+	.splashTabs{
+	    display: flex;
+        justify-content: center;
+        background-color: #006cff !important;
+	    background-color: #b0b0b0 !important;
+	    border: none !important;
+	}
+	
+	.splashTabs li{
+	    background-color: #b0b0b0 !important;
+	}
+	
+	.splashTabs .ui-state-active,
+	.splashTabs .ui-state-default{
+	    background-color: #006cff !important;
+	    background-color: #b0b0b0 !important;
+	}
+	
+	.splashTabs .ui-state-active a{
+	    border-bottom: #000000 4px solid;
+	}
+	
+	.splashTabs .ui-state-active a, 
+	.splashTabs .ui-state-active a:link,
+	.splashTabs .ui-state-default a, 
+	.splashTabs .ui-state-default a:link{
+	    color: #000000 !important;
+	}
+	
+	@media only screen and (max-width: 768px){
+	   .splashTabs{
+	        display: none;
+	   }
+	}
+
+
+/* ALL LAYOUTS - Accounting for Transparencies */
+.agendaLink:hover, .agendaLinkActive{
+	color: #000000;
+	opacity: .5;
+}
+
+
+#regContentContainer {-webkit-border-top-left-radius: 0px; -webkit-border-top-right-radius: 0px; -moz-border-radius-topleft: 0px; -moz-border-radius-topright: 0px; border-top-left-radius: 0px;  border-top-right-radius: 0px;}
+
+#privacyPolicy {margin-left:0px}
+#tpBug {margin-right:0px!important}
+
+	.regLayout10 .contentContainer {
+    background-color: #fff;
+    margin-bottom: 25px;
+}
+.shared-elements-2q2021 .regForm {
+    border-radius: 12px !important;
+}
+.shared-elements-2q2021 .regForm input.buttonSubmit, .shared-elements-2q2021 .regForm button.buttonSubmit, .shared-elements-2q2021 .regForm a.buttonSubmit, .shared-elements-2q2021 .regForm a:link.buttonSubmit, .shared-elements-2q2021 .regForm a:visited.buttonSubmit {
+    border-radius: 12px;
+ }
+.regLayout10 .regDateBar .reminderButton a:active, .regLayout10 .regDateBar .reminderButton a:link, .regLayout10 .regDateBar .reminderButton a:visited, .regLayout9 .regDateBar .reminderButton a:active, .regLayout9 .regDateBar .reminderButton a:link, .regLayout9 .regDateBar .reminderButton a:visited {
+border-radius: 12px;
+}
+
+.wide-column-layouts .regTitleBar h1 {
+    font-size: 2.0em;
+    font-weight: 600;
+}
+
+.regLayout7 .regContentWidth, .regLayout8 .regContentWidth, .shared-elements-2q2021 .regDateBar, .shared-elements-2q2021 #eventDisplayTitle, .hideTitleAndDateBar #eventDisplayTitle, .hideTitleAndDateBar #eventDateAndTime {
+    color: #000000;
+    font-size: 150%;
+}
+
+.shared-elements-2q2021 .regDateBar .reminderButton a {
+    background-color: #b0b0b0 !important;
+    color: #000000 !important;
+    border-radius: 12px !important;
+}
+
+.shared-elements-2q2021 #registerNowtxt {
+    font-weight: 500;
+}
+
+.popoutRequiredNote {
+    font-size: 0.8em;
+    font-weight: 500;
+    display: inline-block;
+    padding-bottom: 5px;
+}
+
+.shared-elements-2q2021 .regFormHeaderText a {
+    text-decoration: underline;
+    color: #00accc;
+    cursor: pointer;
+    font-size: 0.85em !important;
+}
+
+#regPageBody {
+    background: url('https://cache.webcasts.com/content/conf001/1699082/content/2a9054f4ea63042109cb1eeb761406e0e3a7a48a/common/GlobalMeetgreyscaleicon.png');
+    background-size: cover;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+	
+
+@media only screen and (max-width: 768px), only screen and (max-device-width: 768px) and (orientation:portrait) {
+#registerFieldsTable, #registerFieldsTable td {width:100%}
+#registerFieldsTable select, #registerFieldsTable input {max-width:100%}
+}
+/* reglayout : 8 */
+/* Do not put any CSS below the media queries */
+</style>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+	
+</head>
+<body id="regPageBody">
+    
+<!--  ==========================================  Layout 1,2,3   ================================================================================ -->
+	
+<!-- ========================================== End of Layout 1,2,3 ============================================================================ -->
+
+	
+<!-- ==========================================  Layout 4, 5, 6   ================================================================================ -->	
+	
+<!-- ========================================== End of Layout 4, 5, 6 ============================================================================ -->
+
+
+<!-- ==========================================  Layout 7 and 8   ================================================================================ -->
+	
+<style>
+	.center{
+		text-align: center;
+	}
+</style>
+<!-- create id later if needed, right now there is no need -zhh -->
+<div class="pageContainer shared-elements-2q2021" id="" tabindex='0' aria-label="Event Registration Page">
+		
+    <div id="regBannerBar" class="reg-banner-section">
+    	<div class="regContentWidth">   
+			
+<style>
+	/********************
+	  	   Banners
+	********************/
+	.banners *{
+    	margin: 0;
+       	box-sizing: border-box;
+    }
+    
+	.banners{
+		display: flex;
+		justify-content: flex-end;
+	}
+	#eventexit{
+		display: flex;
+		width: auto !important;
+		justify-content: flex-end;
+	}
+
+	#banner, #bannerright{
+		max-width: 100%;
+	}
+	
+	.rightBannerContainer{
+		justify-content: flex-end;
+	}
+	
+	.leftBannerContainer{
+        flex-grow: 1
+	}
+	
+	.rightBannerContainer, .leftBannerContainer{
+		align-self: center;
+	}
+	
+	.bannerBtns{
+		width: 22px !important;
+		height: 22px !important;
+	    border-radius: 22px;
+	}
+	
+	.helpBtn{
+		background-position: -44px -141px !important;
+	}
+	
+	.closeBtn{
+		background-position: -93px -125px !important;
+	}
+	
+	.bannerMargins{
+		margin: 4px 3px;
+	}
+	
+	/********************
+	  IE Specific Hack
+	********************/
+	@media all and (-ms-high-contrast: none), (-ms-high-contrast: active) {
+		.rightBannerContainer, .leftBannerContainer{
+			width: 100%;
+		}
+		#bannerright{
+			float: right;
+		}
+		/*.bannerMargins{
+			width: 25px !important;
+		}*/
+		#eventexit{
+			flex-basis: 120px;
+		}	
+	}
+</style>
+	
+		<section class="banners" id="viewer_banner" role="banner" aria-label="Logos">
+	
+
+
+  
+</section>  
+        </div>
+	</div>
+               
+	
+	
+	<div id="" class="reg-content-section regLayout8">
+		<div class="regContentWidth flexboxRowReverse responsive-view mobile-view">
+			        
+			
+		    <div id="regForm" class="regForm">
+		     	<!-- login form -->			     	
+		    	
+	        	<!-- popformwrapper -->
+ 		          
+	        		<div class="popup-loginform-wrapper hide">
+                
+	        	<!--  -->
+			        <div id="loginFormWrapper" class="changePadding loginFormWrapper flexboxColumn" role="form" aria-label="Log In to the Webcast">
+						
+						
+						<!-- login form toggle start  -->
+						<div id="loginFormHeaderText" class="loginFormHeaderText">
+	                       	<span id='registerNowtxt'>Already Registered? Log In Now</span>
+	                          
+	                       	<a class="showregform">Not Registered?</a>   
+	                        
+	                       
+		                </div>
+						<!-- login form toggle ends -->
+						
+						<!-- actual login form starts -->
+						<form id="frmLogin" action="/session-error.html?info=login" method="post" autocomplete>
+							
+						    
+						  	<label for="email" class="loginFormElement">Email:</label><input type="email" id="email" name="email" title="Email" value="" size="35" class="loginFormElement" />
+						    
+						    
+	
+						  	<input class="button buttonSubmit loginFormElement" type="submit" value="Log In" title="Log In"/>
+						  		
+					  		<input type="hidden" name="ei" value="1744233"/>
+				            <input type="hidden" name="invoking_referral" id="invoking_referral_login" value="" />
+				            <input type="hidden" name="6504294912d3e0629c7153e90e39bc9d5a936b6b" value=""/>
+				            <input type="hidden" name="907ba55f64bb48ccc70aa0605480900f80d5de1b" value=""/>
+					        <input type=hidden name="sh0" id="sh0_login" value="c6498c2b804d5125825a8b6ac7182e44441ba83a" />
+					        <input type=hidden name="sh1" id="sh1_login" value="6cc2724e914888c59560d3e86399aac7bba1e78c||56e45d8f4d549dde69bcf7cbc67a76a3e3ffa242" />
+			       	        <input type=hidden name="segmentidlist" id="segmentidlist_login" value="" />
+					  	</form>
+			        </div>
+		        </div> <!--layout7 or 8 popup loginform wrapper closing tag -->
+	        				
+		 
+	        <!-- login form ends-->   
+	        
+	        <!-- reg form -->
+		    
+		        
+						      
+		      	<div class="popup-regform-wrapper">
+									      
+					<div id="regFormWrapper" class="regFormWrapper flexboxColumn" role="form" aria-label="Register for the Webcast">							        
+						<!-- reg form toggle starts -->																													
+						<div id="regFormHeaderText" class="regFormHeaderText">	
+		                    <span id='registerNowtxt'>
+		                  		Complete this form to enter the webcast.
+		                    </span>
+				      	    
+		                        <a class="showloginform">Already Registered? </a>
+		                        
+		                    
+					    </div>
+	        			<!-- reg form toggle ends-->
+	        			
+					  		<span class="requiredNote popoutRequiredNote"><br/> (*  indicates required field)</span>
+			  			
+				        <!-- actual reg form -->
+				        <a name="regFormAnchor"></a>
+				           <div id="regFormSectionHeader">
+		                       <h2 id="regFormHeaderText">Complete this form to enter the webcast.
+							       
+										<span class="requiredNote"><br/> (*  indicates required field)</span>
+								   
+							   </h2>
+						   </div>
+				        <form id="frmRegister" action="/session-error.html?info=reg" method="post" autocomplete>
+		                   
+
+
+
+	
+			
+			
+					<span id="opt_3b7cb838a74c9f5f96f84e81acc974b13aa4e27e" >
+					<label for="3b7cb838a74c9f5f96f84e81acc974b13aa4e27e">First Name*:</label>
+					
+						<input type="text" id="3b7cb838a74c9f5f96f84e81acc974b13aa4e27e" name="3b7cb838a74c9f5f96f84e81acc974b13aa4e27e" title="First Name" value="" size="35" maxlength="251" >  
+					
+					</span>
+			
+			
+	
+	
+			
+			
+					<span id="opt_fe137186822134d5826dbedfc209cc6d02e076c7" >
+					<label for="fe137186822134d5826dbedfc209cc6d02e076c7">Last Name*:</label>
+					
+						<input type="text" id="fe137186822134d5826dbedfc209cc6d02e076c7" name="fe137186822134d5826dbedfc209cc6d02e076c7" title="Last Name" value="" size="35" maxlength="251" >  
+					
+					</span>
+			
+			
+	
+	
+			
+			
+					<span id="opt_29ea5d7b9e46d0e83b73c8b912c86ad7f5ead00d" >
+					<label for="29ea5d7b9e46d0e83b73c8b912c86ad7f5ead00d">Company*:</label>
+					
+						<input type="text" id="29ea5d7b9e46d0e83b73c8b912c86ad7f5ead00d" name="29ea5d7b9e46d0e83b73c8b912c86ad7f5ead00d" title="Company" value="" size="35" maxlength="251" >  
+					
+					</span>
+			
+			
+	
+	
+			
+			
+					<span id="opt_197653086fc9cc7c8f2f9142e448d4804b54a6be" >
+					<label for="197653086fc9cc7c8f2f9142e448d4804b54a6be">Email*:</label>
+					
+						<input type="email" id="197653086fc9cc7c8f2f9142e448d4804b54a6be" name="197653086fc9cc7c8f2f9142e448d4804b54a6be" title="Email" value="" size="35" maxlength="251" >
+					
+					</span>
+			
+			
+	
+		<script type="text/javascript">
+		
+			var aOptinregfield = [];
+		
+	</script>
+
+			     		   
+			     		   
+	              				
+					     	<div id="frmRegisterBtn" class="frmRegisterBtn">
+							   <input class="button buttonSubmit" type="submit" value="Submit" title="Submit"/>
+							</div>
+							
+							<input type="hidden" name="ei" value="1744233"/>
+							<input type="hidden" name="invoking_referral" id="invoking_referral" value="" />
+						    <input type="hidden" name="6504294912d3e0629c7153e90e39bc9d5a936b6b" value=""/>
+						    <input type="hidden" name="907ba55f64bb48ccc70aa0605480900f80d5de1b" value=""/>
+					        <input type="hidden" name="sh0" id="sh0" value="c6498c2b804d5125825a8b6ac7182e44441ba83a" />
+				            <input type="hidden" name="sh1" id="sh1" value="6cc2724e914888c59560d3e86399aac7bba1e78c||56e45d8f4d549dde69bcf7cbc67a76a3e3ffa242" />
+				            <input type="hidden" name="segmentidlist" id="segmentidlist_reg" value="" />
+					   </form>
+									   
+	                </div>
+				</div> <!-- closing div for popup regform wrapper -->
+                
+		       
+            </div>
+	        <!-- reg form ends -->
+	            
+	        <!-- left or right side container with title, date, content -->	        
+			<div class="regContentWidth flexboxColumn">
+			    <!-- Reg Title -->
+	        	
+       
+	        	<!-- Reg Date -->
+	        	
+	        	<div id="" class="regDateBar">
+	        		<div>
+	            		<h2 id="eventDateAndTime" class="eventDateAndTime" tabindex='0'">Wed, Dec 3, 2025 7:57 AM EST{LOCAL_TZ}  </h2>
+	            	</div>
+	        	</div>
+	        	
+	        
+	    
+	    		<!-- Reg Content - content container holds custom reg stuff from wysiwyg -->
+		        <div class="content">	        
+		        	<!-- custom registration text -->
+		        	
+		            	<form name="portal_checkbox" action="/session-error.html?info=portalcheckbox" tabindex="0" id="portal_checkbox" aria-label="Webcast Details">
+		            		<div data-empty="true" style="text-align: center;"><span style="font-family: arial, helvetica, sans-serif; font-size: 36px;"><strong fr-original-style="font-weight: 700;" style="font-weight: 700;">Kimberly Clark Corporation</strong></span></div><div data-empty="true" style="text-align: center;"><br></div><div data-empty="true" style="text-align: center;"><span style="font-family: arial, helvetica, sans-serif; font-size: 24px;"><br></span></div><div data-empty="true" style="text-align: center;"><span style="font-size: 18px;"><span style="font-family: arial, helvetica, sans-serif;">Speaking from the</span></span></div><div style="text-align: center;"><span style="font-family: arial, helvetica, sans-serif; font-size: 24px;">Morgan Stanley Global</span></div><div style="text-align: center;"><span style="font-family: arial, helvetica, sans-serif; font-size: 24px;">Consumer&nbsp;</span><span style="font-family: arial, helvetica, sans-serif; font-size: 24px;">&amp; Retail Conference</span></div><div data-empty="true" style="text-align: center;"><br></div><div data-empty="true" style="text-align: center;"><br></div><div data-empty="true" style="text-align: center;"><br></div><div data-empty="true" style="text-align: center;"><br></div><div data-empty="true" style="text-align: center;"><br></div><div data-empty="true" style="text-align: center;"><br></div><div data-empty="true" style="text-align: center;"><br></div><div data-empty="true" style="text-align: center;"><br></div><div data-empty="true" style="text-align: center;"><br></div><div data-empty="true" style="text-align: center;"><br></div><div data-empty="true" style="text-align: center;"><br></div><div style="text-align: center;"><br></div><div style="text-align: center;"><br></div><div style="text-align: center;"><br></div>
+		            	</form>
+		            
+		            
+		            
+					
+		            		    			    				
+		        </div>  <!-- .content div closing tag -->
+				        
+			</div> <!-- Closing Tag for left or right column / flexboxColumn container -->			             
+            
+	    </div> <!-- regContentWidth Flexbox Container Closing Tag -->
+	        
+	    <div id="show_security_error_mssg"></div>
+	    <div class="clear"></div>
+			
+	</div> <!-- RegContentBar closing tag -->
+	<!-- end of regContentBar for layout 7 or layout 8 -->	    
+       
+ 
+    <div id="" class="reg-footer" role="contentinfo" aria-label="Disclaimer and Footer">
+        <div class="regContentWidth">
+        	<span id="regPageHelp"><a href="#" id="linkFAQ" tabindex='0' class="footerLink" aria-label="FAQ & system test page link opens in new window">FAQs and System Test</a>&nbsp; &nbsp; </span>
+			     
+                    <div id="tpBug">
+                    <a id="webcastby" href="https://www.globalmeet.com" target="_blank"><img src="/viewer/images/webcastbygm.png" border="0" hspace="0" vspace="0" alt="Webcast by GlobalMeet" /></a>
+                    </div>
+                   <br /><br />
+                 
+      			 
+        </div>
+    </div> <!-- regFooterBar Closing tag -->
+        
+        
+</div> <!-- pageContainer Closing Tag -->
+        
+	  <!-- final closing tag for layout 7 and layout 8 -->
+<!-- ========================================== End of Layout 7 and 8 ============================================================================ -->
+
+
+<!-- ==========================================  Layout 9, 10, 11, 12   ================================================================================ -->
+	  <!-- closing tag for layout 9, layout 10, layout 11, layout 12 -->
+<!-- ========================================== End of Layout 9, 10, 11, 12 ============================================================================ -->
+
+
+
+
+
+	
+<form name="passThruForm" id="passThruForm" method="post" action="/viewer/landing.jsp?ei=1744233&tp_key=c6498c2b80">
+	<input type="hidden" id="passThruUserId" name="ui" value=""/>
+    <input type="hidden" name="sti" value=""/>
+    <input type="hidden" name="tp_hidden" value=""/>
+    <input type="hidden" id="ea" name="ea" value=""/>
+    <input type="hidden" id="fname" name="fname" value=""/>
+    <input type="hidden" id="lname" name="lname" value=""/>
+    <input type="hidden" id="company" name="company" value=""/>
+    <input type="hidden" id="phash" name="phash" value=""/>
+    <input type="hidden" id="tp_special" name="tp_special" value="8"/>
+    <input type="hidden" id="tp_player" name="tp_player" value=""/>
+    <input type="hidden" id="ishtml5player" name="ishtml5player" value=""/>
+    <input type="hidden" id="ishtml5slide" name="ishtml5slide" value=""/>
+    <input type="hidden" id="customregstatus" name="customregstatus" value="0"/>
+    <input type="hidden" id="userLocalTZDate" name="userLocalTZDate" value=""/>
+    <input type="hidden" name="sh0" id="sh0_pt" value="c6498c2b804d5125825a8b6ac7182e44441ba83a" />
+    <input type="hidden" name="sh1" id="sh1_pt" value="6cc2724e914888c59560d3e86399aac7bba1e78c||56e45d8f4d549dde69bcf7cbc67a76a3e3ffa242" />
+    <input type="hidden" name="segmentidlist" id="segmentidlist" value="" />
+    <input type="hidden" name="language" id="language" value="en-us" />
+    <input type="hidden" name="tp_jump" id="tp_jump" value="" />
+    <input type="hidden" name="lglvl" id="lglvl" value="-1" />
+</form>
+<iframe src="/viewer/blank.html" name="helpPopup" id="helpPopup" frameborder="0" border="0" scrolling="auto" ALLOWTRANSPARENCY="true"></iframe>
+<div id="overlay"></div>
+<ul id="reminderButtonSub" style="display: none;"><li id="reminderButtonSubVcs"><a href="#" alt="Outlook">Outlook &nbsp; &#10095;</a></li><li id="reminderButtonSubGoogle"><a href="#" alt="Google">Google  &nbsp; &#10095;</a></li></ul>
+<script type="text/javascript" src="/viewer/include/jquery-3.6.4.min.js"></script>
+<script type="text/javascript" src="/viewer/include/jquery-ui.1.12.1.min.js"></script>
+<script type="text/javascript" src="/viewer/include/jquery-migrate-1.4.1.min.js"></script>
+<script type="text/javascript" src="/viewer/include/jquery.form.js"></script>
+
+<script type="text/javascript">
+var ishtml5player = true;
+var slideType = "html5";
+var ishtml5slide = (slideType=="html5" && (document.createElement('canvas').getContext))?true:false;
+var varEventId = '1744233';
+var sEmailId = '197653086fc9cc7c8f2f9142e448d4804b54a6be';
+var sFirstNameId = '3b7cb838a74c9f5f96f84e81acc974b13aa4e27e';
+var sLastNameId = 'fe137186822134d5826dbedfc209cc6d02e076c7';
+var sTitleId = '0ea57cd1f2074cb1708ff7fd479848faccf1d932';
+var sCompanyId = '29ea5d7b9e46d0e83b73c8b912c86ad7f5ead00d';
+var sPhoneId = 'cf3e1d50d0fede72e3d7ff75f5efd49b9630e396';
+var sPostalCodeId = 'db68823a9cbf759f870e784e397e14db9f72fb5b';
+var sCountryId = 'b0a6b7f0f67130ce0ffca207828d648ef4e8ed95';
+var sStateId = '1dc6feb67e7da1f058e9fddf7c33d5a04f9dd627';
+var sUSACountryID = '151ec4f95df739dc9694d79237c75f798fc52b82';
+var sCanadaCountryID = '3c5150d5d5c7507a2d52cca6cdc3fd8f5549dbf6';
+var sLocalTZPlaceholder = '{LOCAL_TZ}';
+var stateVal = ""; //Used in ibm_custom..
+
+function closeHelp(){
+	   $("#helpPopup").attr("src","/viewer/blank.html");
+	   $("#helpPopup").hide();
+	   $("#overlay").hide();
+}
+
+//adds two brs to put already registered button on next line on mobile
+function addLineBreakOnMobile(){
+	if($(window).width() < 415){
+		$('.break').remove();
+		$("<br class='break'/><br class='break'/>").insertAfter('#footerRegisterBtn');
+		$("<br class='break'/><br class='break'/>").insertAfter('#headerRegisterBtn');				
+	}else{
+		$('.break').remove();
+	}	
+}
+
+$(window).resize(function(){
+	// for layout 5
+	
+	
+});
+
+
+// Enter button access for links and close buttons for accessibility
+$(".showloginform").on('keyup', function(event){
+    if(event.keyCode == 13){
+        $(".showloginform").click();
+        $('#loginFormWrapper').focus();
+    }
+});
+
+$(".showregform").on('keyup', function(event){
+    if(event.keyCode == 13){
+        $(".showregform").click();
+        $('#regFormWrapper').focus();
+    }
+});		
+
+$("#closeregform, #closeloginform").on('keyup', function(event){
+    if(event.keyCode == 13){
+        $("#closeregform, #closeloginform").click();
+        $('#eventDisplayTitle').focus();
+    }
+});
+
+// Pressing esc will Close forms
+$(document).on('keydown', function(event) { 
+    if (event.which == 27) {
+        $("#closeregform, #closeloginform").click();
+        $('#eventDisplayTitle').focus();
+    }
+}); 
+
+// on FAQ btn click it will return user to top of the window so they can see the form
+$('#linkFAQ').on('click', function(e){
+	window.scrollTo(0, 0);
+});
+
+$(document).ready(function() {
+
+	
+	
+	// adding tabindex numbers
+	$('.reminderButton a').attr('tabindex', '0');
+	$('#reminderButtonSubVcs a').attr('tabindex', '0');
+	$('#reminderButtonSubGoogle a').attr('tabindex', '0');
+	
+	
+	
+	let $dateBarDt = $("#eventDateAndTime");
+ 	let replaceString = '';
+	try{
+		let formattedLocalEventScheduleDt='';
+		const TIMEZONE_ID = 'US/Eastern';
+		const sEventScheduleMillis = 1764766620000;
+		const date = new Date(sEventScheduleMillis);
+		const locale_tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+		
+		const options_date = {weekday: 'short',month: "short",day:'numeric',year: "numeric"};
+		const options_time = {hour: "numeric",minute: "numeric"};
+		const locale_tz_short = Intl.DateTimeFormat("en", {...options_time,timeZoneName: "short",timeZone: locale_tz}).formatToParts(date).at(-1).value.toUpperCase();
+		
+		console.log(TIMEZONE_ID,locale_tz,locale_tz_short);
+		
+		let formattedLocalEventScheduleDt1 = Intl.DateTimeFormat("en", {...options_date,timeZone: locale_tz}).format(date);
+		let formattedLocalEventScheduleDt2 = Intl.DateTimeFormat("en", {...options_date,timeZone: TIMEZONE_ID}).format(date);
+		//if date is not same, display entire date else check time 
+		if(formattedLocalEventScheduleDt1!==formattedLocalEventScheduleDt2){
+			formattedLocalEventScheduleDt = Intl.DateTimeFormat("en",  {...options_date,timeZone: locale_tz}).format(date)	+ ' '+ Intl.DateTimeFormat("en",  {...options_time,timeZone: locale_tz}).format(date);
+		}else{
+			formattedLocalEventScheduleDt1 = Intl.DateTimeFormat("en", {...options_time,timeZone: locale_tz}).format(date);
+			formattedLocalEventScheduleDt2 = Intl.DateTimeFormat("en", {...options_time,timeZone: TIMEZONE_ID}).format(date);
+			
+			if(formattedLocalEventScheduleDt1!==formattedLocalEventScheduleDt2){
+				formattedLocalEventScheduleDt = Intl.DateTimeFormat("en",  {...options_time,timeZone: locale_tz}).format(date);
+			}
+		}
+		if(formattedLocalEventScheduleDt){
+			const tz = locale_tz_short.startsWith('GMT')?locale_tz:locale_tz_short;
+			formattedLocalEventScheduleDt = formattedLocalEventScheduleDt + ' ' + tz; 
+			replaceString = ' (' + formattedLocalEventScheduleDt + ')';
+			//need to set form field so it gets forwarded to event.jsp
+			$("#userLocalTZDate").val(formattedLocalEventScheduleDt);			
+
+		}
+		
+	}catch(e){
+	    console.log('Exception generating user local time');
+	    console.log(e);
+	}
+	//always remove placeholder
+	if($dateBarDt && $dateBarDt.html()){
+	    const dtText = $dateBarDt.html().replace(sLocalTZPlaceholder,replaceString);
+	    $dateBarDt.html(dtText);
+	}
+	
+	
+	// adding focus for main page
+	$('.pageContainer').focus();
+	//alert(typeof $("#"+sCountryId)[0]);
+	
+	//Loaction based question hide in dom on load
+	if(typeof aOptinregfield!='undefined'){
+		$.each(aOptinregfield, function(key, value) {
+		 	try{
+		   		$("#registerFieldsTable #opt_" + aOptinregfield[key]["fk_fieldid"]).parent().hide();
+		   	}catch(err){
+		   		//.. newer reg layouts have no tables so this will error
+		   	}	
+		});
+	}
+	
+	
+	if(typeof $("#"+sCountryId)[0]=='undefined' && typeof aOptinregfield!='undefined'){
+		$.each(aOptinregfield, function(key, value) {
+			$("#opt_" + aOptinregfield[key]["fk_fieldid"]).show();
+	   	});
+	}
+	
+	$("#"+sCountryId).change(function() {
+		var optionSelected = $("option:selected", this);
+	    var valueSelected = this.value;
+	    var dataString = {country: valueSelected};
+	    var state = "";
+	   	if(typeof $("#"+sStateId)[0] != 'undefined'){
+	   		state = $("#"+sStateId)[0].value;
+	    }
+	   	//Loaction based question show/hide
+	   	$.each(aOptinregfield, function(key, value) {
+	   		if(aOptinregfield[key]["fk_master_abstractname"]=="country"){
+	   			if(aOptinregfield[key]["datavalue"].indexOf(optionSelected.text()) >-1){
+	   				$("#opt_" + aOptinregfield[key]["fk_fieldid"]).show();
+	   				
+	   				try{
+	   					$("#registerFieldsTable #opt_" + aOptinregfield[key]["fk_fieldid"]).parent().show();
+	   				}catch(err){
+	   					//.. newer reg layouts have no tables so this will error
+	   				}	   				
+	   			}else{
+	   				$("#opt_" + aOptinregfield[key]["fk_fieldid"]).hide();
+	   				$("#" + aOptinregfield[key]["fk_fieldid"] + " option:selected").prop("selected", false);
+	   				
+	   				try{
+	   					$("#registerFieldsTable #opt_" + aOptinregfield[key]["fk_fieldid"]).parent().hide();
+	   				}catch(err){
+	   					//.. newer reg layouts have no tables so this will error
+	   				}
+	   			}
+	   		}
+	   	});
+	    if (state != "" && state != null && valueSelected == sUSACountryID){
+	        return;
+	    }else{
+			$.ajax({ type: "POST",
+	             url: "/viewer/proc_states.jsp",
+	             data: dataString,
+	             dataType: "json",
+	             success: function(jsonResult) {
+	  					if(jsonResult.AnswerList.length > 0){
+	  						var tmp = $("#"+sStateId).replaceWith("<select tabindex='0' id='"+sStateId+"' name='"+sStateId+"'>");
+	  						$("#"+sStateId).prop('required',tmp.prop("required"));
+	  						$("#"+sStateId).attr('title',tmp.attr("title"));
+	  						$("#"+sStateId).attr('tabindex', '0')
+	  						$("#"+sStateId).append($("<option></option>").text("--").val(""));
+	            	 		$.each(jsonResult.AnswerList, function(index, item) {
+	            	        	$("#"+sStateId).append($("<option></option>").text(item.state).val(item.state_id));
+	            	    	});
+	             		}else{
+	             			var tmp = $("#"+sStateId).replaceWith("<input type='text' id='"+sStateId+"' name='"+sStateId+"' value='' size='35' maxlength='251'></input>");
+	             			$("#"+sStateId).prop('required',tmp.prop("required"));
+	  						$("#"+sStateId).attr('title',tmp.attr("title"));
+	  						$("#"+sStateId).attr('tabindex', '0').val(stateVal);
+	             		}
+	             }
+	    	});
+	    }
+	});
+	
+	
+
+	
+	$(".buttonFAQ,#linkFAQ").click(function(){
+		   //If the event is a portal force the system test to html5
+		   try {
+			   var isAportal="false";
+			   var usehtml5player=false;
+			   var usehtml5slide=false;
+			   if (isAportal) {
+				   usehtml5player=true;
+				   usehtml5slide=true;
+			   }
+		   } catch (err) {
+			  //Do nothing
+		   }
+		   var helpsrc =  "/viewer/faq.jsp?mType=a&ei=1744233&ishtml5player="+usehtml5player+"&ishtml5slide="+usehtml5slide+ "&language=en-us";
+		   
+   	   $("#helpPopup").attr("src",helpsrc);
+   	   $("#helpPopup").show();
+   	   $("#overlay").show();
+   	   return false;
+	});
+	
+	
+	var regSubmitDisable = false;
+
+	$("#frmRegister").submit(function() {
+		$('#frmRegister:input[type="submit"]').prop('disabled', true); 
+		if (regSubmitDisable){
+			return false;
+		}
+		regSubmitDisable = true;
+	  	regSubmit();
+	  	return false;
+	});
+
+	var currentreminderlink = "";
+	var currentreminderid = "";
+	
+	function closecalendardiv(){
+		currentreminderlink = "";
+		currentreminderid = "";
+		$("#reminderButtonSub").slideUp('slow');
+
+	}
+	$(".reminderButton a, .reminderButtonPortal a").on("click",function(e) {
+		if($('#reminderButtonSub').is(':visible')){
+			closecalendardiv();
+			return false;
+		}
+		$("#reminderButtonSub").css({
+		     position:'absolute',
+		     top: $(this).offset().top + $(this).outerHeight(true),
+		     left: $(this).offset().left,
+		     width:$(this).outerWidth(true),
+		    zIndex:5000
+		 });
+		$(this).after($("#reminderButtonSub"));
+		$("#reminderButtonSub").slideDown();
+		
+		currentreminderlink = $(this).attr("href");
+	    currentreminderid = $(this).attr("id");
+	    if(currentreminderlink=="#" && currentreminderid!=undefined){
+	    	currentreminderlink = "/viewer/vcs.jsp?ei=" + currentreminderid.split("_")[1];
+	    }
+	    console.log("currentreminderlink " + currentreminderlink + " currentreminderid " + currentreminderid);
+	    e.stopPropagation();
+	    return false;
+	})
+	$(".reminderButton, .reminderButtonPortal").on("mouseleave", function(e) {
+		closecalendardiv();
+	});
+	
+	$("#reminderButtonSubVcs").on("click", function(e) {
+		window.open(currentreminderlink);
+		return false;
+	});
+	
+	$("#reminderButtonSubGoogle").on("click", function(e) {
+		window.open(currentreminderlink.replace("vcs.jsp","googlecal.jsp"),"googlecal");
+		return false;
+	});
+	
+	/* showregform and showlogin form click listeners, diff listeners are used for layout 12 than the rest */
+	
+		$(".showregform").on("click",function(e){
+			$(".popup-regform-wrapper").show();
+			$(".popup-loginform-wrapper").hide();
+			$('.regFormWrapper').attr('tabindex', '0');
+			$('#regFormHeaderText a').attr('tabindex', '0');
+			$('#frmRegister input').attr('tabindex', '0');
+			$('#frmRegister textarea').attr('tabindex', '0');
+			$('#frmRegister select').attr('tabindex', '0');
+			$('.regFormWrapper').focus();
+		});
+		$("#closeregform").on("click",function(e){
+			$(".popup-regform-wrapper").hide();
+		});
+		
+		$(".showloginform").on("click",function(e){
+			$(".popup-regform-wrapper").hide();
+			$(".popup-loginform-wrapper").show();
+			$('.loginFormWrapper').attr('tabindex', '0');
+			$('.loginFormWrapper a').attr('tabindex', '0');
+			$('#frmLogin input').attr('tabindex', '0');
+			$('.loginFormWrapper').focus();
+		});
+		$("#closeloginform").on("click",function(e){
+			$(".popup-loginform-wrapper").hide();
+		});	
+	
+	
+	
+	function regSubmit(){
+		
+		
+		
+		var email = $('#frmRegister #197653086fc9cc7c8f2f9142e448d4804b54a6be').val();
+		var dataString = $("#frmRegister").serialize();
+		$.ajax({ type: "POST",
+	              url: "/viewer/proc_register.jsp?eaid=" + encodeURIComponent(email),
+	               data: dataString,
+	               dataType: "json",
+	               success: function(jsonResult) {
+	            	   	regSubmitDisable = false;
+	            	   	$('#frmRegister:input[type="submit"]').prop('disabled', false); 
+						jsonResult = jsonResult[0];
+		                $("span.errorCheckArrows").remove();
+		                $("span.errorText").remove();
+		                $(".error").removeClass("error");
+		                $("#frmRegister  *").removeClass("errorCheckArrowsElm");
+			             $("#frmLogin  *").removeClass("errorCheckArrowsElm");
+		                if (!jsonResult.success) {
+		                   var bfocused = false;
+		                   for (i=0; i<jsonResult.errors.length; i++) {
+		                     	var curError = jsonResult.errors[i];
+
+		                     	if(curError.message == "Enter a valid email address "){
+		                     		curError.message = "Enter a valid email address ";
+		                     	}else if(curError.message == "REQUIRED"){
+		                     		curError.message = "REQUIRED";
+		                     	}else if(curError.message == "Both email fields must match "){
+		                     		curError.message = "Both email fields must match ";
+		                     	}else if(curError.message == "Incorrect password "){
+		                     		curError.message = "Incorrect password ";
+		                     	}else if(curError.message == "Restricted text used."){
+		                     		curError.message = "Restricted text used.";
+		                     	}else if(curError.message == "Oops! Something went wrong. We are working hard to get this fixed. "){
+		                     		curError.message = "Oops! Something went wrong. We are working hard to get this fixed. ";
+		                     	}else if(curError.message == "Please submit registration form again."){
+		                     		curError.message = "Please submit registration form again.";
+		                     	}
+		                  
+		                      	if(curError.element == "frmRegister"){
+		                      		$("#" + curError.element).after("<span class='errorText'>" + curError.message + "</span>");
+		                      	}else{
+		                      		$('#frmRegister label[for="' + curError.element + '"]').append("<span class='errorCheckArrows'>" + curError.message + "</span>");
+		                      		$("#frmRegister #" + curError.element).addClass("errorCheckArrowsElm");
+		                      		if(!bfocused){
+		                      			$("#frmRegister #" + curError.element).focus();
+		                      			bfocused = true;
+		                      		}
+		                      	}
+		                   }
+		                   return;
+		                } else {
+		                   	if( jsonResult.passThru.security_entry_error == true){
+		                 		$("#passThruForm").attr('action', jsonResult.passThru.security_obj.security_error_url);
+		                   		$("#passThruForm").append('<input type=\"hidden\" id=\"ei\" name=\"ei\" value=\"\"/>');
+		                   		$("#passThruForm #ei").val(varEventId);
+		                   		if($("#passThruForm").attr('action')==""){
+		                   			$("#passThruForm").attr('action','/session-error.html?info=regsecerror');
+		                   		}
+		                   		$("#passThruForm").submit();
+		                   	}else{
+		                   		$("#passThruForm #phash").val(jsonResult.passThru.phash);
+		                   		$("#passThruForm #segmentidlist").val(jsonResult.passThru.segmentidlist);
+		                   		$("#passThruForm #passThruUserId").val(jsonResult.passThru.passThruUserId);
+								$("#passThruForm #ea").val(jsonResult.passThru.ea);
+								$("#passThruForm #fname").val(jsonResult.passThru.firstname);
+								$("#passThruForm #lname").val(jsonResult.passThru.lastname);
+								$("#passThruForm #company").val(jsonResult.passThru.company);
+								$("#passThruForm #ishtml5player").val(ishtml5player);
+								$("#passThruForm #ishtml5slide").val(ishtml5slide);
+								$("#passThruForm").submit();
+		                   	}
+		                   
+						}
+		        },
+		        error: function(xhr, status, error){
+		         	regSubmitDisable = false;
+            	   	$('#frmRegister:input[type="submit"]').prop('disabled', false); 
+		            var errorMessage = xhr.status + ': ' + xhr.statusText;
+		            $("span.errorText").remove();
+		            $("#frmRegister").after("<span class='errorText'>Oops! Something went wrong. We are working hard to get this fixed. </span>");
+		            console.log('Reg Error - ' + errorMessage);
+		        }
+		 });
+	}
+	
+	function loginSubmit(){
+	var selected_segmentid = $("#portal_checkbox input:checkbox:checked").map(function () {return this.value;}).get().join(",");
+	$("#frmLogin #segmentidlist_login").val(selected_segmentid);
+	var dataString = $("#frmLogin").serialize();
+	
+	$.ajax({ type: "POST",
+	          url: "/viewer/proc_login.jsp",
+	          data: dataString,
+	          dataType: "json",
+	          success: function(jsonResult) {
+			      jsonResult = jsonResult[0];
+			      $("span.errorCheckArrows").remove();
+	              $("span.errorText").remove();
+	              $(".error").removeClass("error");
+	              $("#frmRegister  *").removeClass("errorCheckArrowsElm");
+	              $("#frmLogin  *").removeClass("errorCheckArrowsElm");
+                  if (!jsonResult.success) {
+                	  var bfocused = false;
+                	  for (i=0; i<jsonResult.errors.length; i++) {
+	                     	var curError = jsonResult.errors[i];
+	                      	
+	                     	if(curError.message == "Enter a valid email address "){
+	                     		curError.message = "Enter a valid email address ";
+	                     	}else if(curError.message == "This email address was not found"){
+	                     		curError.message = "This email address was not found";
+	                     	}else if(curError.message == "REQUIRED"){
+	                     		curError.message = "REQUIRED";
+	                     	}else if(curError.message == "This email/password combination was not found"){
+	                     		curError.message = "This email\/password combination was not found";
+	                     	}else if(curError.message == "Restricted text used."){
+	                     		curError.message = "Restricted text used.";
+	                     	}
+	                     	
+	                     	if(curError.element == "frmLogin"){
+	                      		//$("#" + curError.element).after("<span class='errorText'>" + curError.message + "</span>");
+	                     		$('#frmLogin label[for="' + "email" + '"]').after("<span class='errorCheckArrows'>" + curError.message + "</span>");
+	                     		$("#frmLogin #" + "email").addClass("errorCheckArrowsElm");
+	                      	}else{
+	                      		$('#frmLogin label[for="' + curError.element + '"]').after("<span class='errorCheckArrows'>" + curError.message + "</span>");
+	                      		if(curError.element == 'password'){
+	                      			curError.element = 'password_login';
+	                      		} 
+	                      		$("#frmLogin #" + curError.element).addClass("errorCheckArrowsElm");
+	                      		if(!bfocused){
+	                      			$("#frmLogin #" + curError.element).focus();
+	                      			bfocused = true;
+	                      		}
+	                      	}
+	                   }
+                       return;
+                   } else {
+	                   	if( jsonResult.passThru.security_entry_error == true){
+	                  		$("#passThruForm").attr('action', jsonResult.passThru.security_obj.security_error_url);	
+	                   		$("#passThruForm").append('<input type=\"hidden\" id=\"ei\" name=\"ei\" value=\"\"/>');
+	                   		$("#passThruForm #ei").val(varEventId);
+	                   		$("#passThruForm").submit();
+	                   	}else{
+	                   		$("#passThruForm #phash").val(jsonResult.passThru.phash);
+	                   		$("#passThruForm #segmentidlist").val(jsonResult.passThru.segmentidlist);
+	                    	$("#passThruForm #passThruUserId").val(jsonResult.passThru.passThruUserId);
+							$("#passThruForm #ea").val(jsonResult.passThru.ea);
+							$("#passThruForm #fname").val(jsonResult.passThru.firstname);
+							$("#passThruForm #lname").val(jsonResult.passThru.lastname);
+							$("#passThruForm #company").val(jsonResult.passThru.company);
+							$("#passThruForm #customregstatus").val(jsonResult.passThru.customregstatus);
+							$("#passThruForm #ishtml5player").val(ishtml5player);
+							$("#passThruForm #ishtml5slide").val(ishtml5slide);
+							$("#passThruForm").submit();
+	                   	}
+					}
+                },
+		        error: function(xhr, status, error){
+		        	   var errorMessage = xhr.status + ': ' + xhr.statusText;
+		        	   $("span.errorText").remove();
+		        	   $('#frmLogin').after("<span class='errorText'>Oops! Something went wrong. We are working hard to get this fixed. </span>");
+			           console.log('Login Error - ' + errorMessage);
+		        }
+      });
+	}
+	
+	$("#frmLogin").submit(function() {
+		loginSubmit();
+    	return false;
+	});
+
+});
+</script>
+
+  
+</body>
+</html>

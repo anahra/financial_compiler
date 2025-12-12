@@ -1,0 +1,12 @@
+streamlit
+yfinance
+pandas
+plotly
+requests
+beautifulsoup4
+openai
+numpy
+scikit-learn
+openpyxl
+pypdf
+pydeck

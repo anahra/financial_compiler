@@ -1,0 +1,21 @@
+[Summary of KMB Earnings 2023-2020]
+
+This file serves as a consolidated historical reference for the AI Analyst.
+
+## 2022 Earnings Summary
+*   **Q4 2022:** Organic Sales +5%. Volume -7%. 
+*   **Q3 2022:** Organic Sales +5%. Price +9%.
+*   **Q2 2022:** Organic Sales +9%. 
+*   **Q1 2022:** Organic Sales +10%.
+
+## 2021 Earnings Summary
+*   **Full Year:** Organic Sales -1%.
+*   **Key Challenge:** Significant inflation ($1.5B cost headwinds).
+*   **Volume:** Negatively impacted by destocking after 2020 surge.
+
+## 2020 Earnings Summary
+*   **Full Year:** Organic Sales +6%. Best performance in years.
+*   **Key Driver:** COVID-19 demand surge ("Pantry Loading").
+*   **Q1 2020:** Organic Sales +11% (Peak Panic Buying).
+
+Note: For strategic queries, refer to the Annual Reports in the Knowledge Base for more granular detail.

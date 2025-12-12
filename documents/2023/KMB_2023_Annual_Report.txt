@@ -1,0 +1,24 @@
+[Summary of Kimberly-Clark 2023 Annual Report (Form 10-K)]
+
+Filing Date: February 8, 2024
+Period Ending: December 31, 2023
+
+## Financial Highlights:
+*   **Net Sales:** $20.4 billion (+1% YoY).
+*   **Organic Sales:** +5% (driven by +6% price, offset by -1% mix).
+*   **Operating Profit:** $2.34 billion (Reported), $2.96 billion (Adjusted).
+*   **EPS:** $5.21 (Reported), $6.57 (Adjusted).
+*   **Gross Margin:** 34.4% (+360 bps), driven by $325M in FORCE savings and net revenue realization.
+
+## Operational Highlights:
+*   **Personal Care:** +5% organic sales growth.
+*   **Restructuring:** Continued execution of the global restructuring program.
+*   **Acquisitions/Divestitures:** Completed acquisition of Thinx Inc. and divestiture of Brazil tissue assets.
+*   **Sustainability:** On track to halve environmental footprint by 2030.
+
+## Risk Factors (Key Excerpts):
+*   Input cost volatility (pulp, polymer, energy).
+*   Competitive activity and private label pressure.
+*   Geopolitical instability in key markets.
+
+Note: Full text is ~100+ pages. This summary captures key strategic and financial data points for the AI Analyst.
