@@ -528,7 +528,7 @@ elif page == "Supply Chain":
     st.markdown("##### Demographic Overlays")
     overlay_driver = st.selectbox(
         "Select Map Layer", 
-        ["None", "Population (2024 Est.)", "Median Household Income", "Births (2023)", "Avg. Mfg Labor Cost ($/hr)"],
+        ["None", "High Vol. Transport Lanes", "Population (2024 Est.)", "Median Household Income", "Births (2023)", "Avg. Mfg Labor Cost ($/hr)"],
         index=0
     )
 
@@ -594,7 +594,34 @@ elif page == "Supply Chain":
     fig_map = go.Figure()
 
     # --- 0. Overlay Layers ---
-    if overlay_driver != "None":
+    if "Transport Lanes" in overlay_driver:
+        # Define Major Corridors (Approximate Paths for Overlay)
+        lanes = [
+            {"name": "I-5 (West Coast Artery)", "path": [(32.7157, -117.1611), (34.0522, -118.2437), (47.6062, -122.3321)]}, # SD -> LA -> Seattle
+            {"name": "I-35 (NAFTA Corridor)", "path": [(27.5036, -99.5076), (29.4241, -98.4936), (32.7767, -96.7970), (41.8781, -87.6298)]}, # Laredo -> San Antonio -> DFW -> Chi
+            {"name": "I-95 (East Coast Artery)", "path": [(25.7617, -80.1918), (30.3322, -81.6557), (40.7128, -74.0060)]}, # Miami -> JAX -> NY
+            {"name": "I-10 (Southern Belt)", "path": [(34.0522, -118.2437), (33.4484, -112.0740), (29.7604, -95.3698), (30.3322, -81.6557)]}, # LA -> Phx -> Houston -> JAX
+            {"name": "I-80 (Cross Country)", "path": [(37.7749, -122.4194), (40.7608, -111.8910), (41.8781, -87.6298), (40.7128, -74.0060)]}, # SF -> SLC -> Chi -> NY
+            {"name": "I-75 (Auto Alley)", "path": [(42.3314, -83.0458), (39.9612, -82.9988), (33.7490, -84.3880), (28.5383, -81.3792)]}, # Detroit -> Cbus -> ATL -> Orlando
+            {"name": "I-40 (Golden Lane)", "path": [(34.0556, -117.1825), (35.1495, -90.0490), (35.2271, -80.8431)]} # Redlands (LA) -> Memphis -> Charlotte
+        ]
+        
+        for lane in lanes:
+            lats = [p[0] for p in lane['path']]
+            lons = [p[1] for p in lane['path']]
+            
+            fig_map.add_trace(go.Scattergeo(
+                lon=lons,
+                lat=lats,
+                mode='lines',
+                line=dict(width=3, color='#f59e0b', dash='dashdot'), # Amber Dashed
+                opacity=0.8,
+                name=lane['name'],
+                hoverinfo='text',
+                text=f"<b>{lane['name']}</b><br>High Volume Commercial Lane"
+            ))
+
+    elif overlay_driver != "None":
         
         # A. State Level Choropleth
         # Prepare Data
@@ -642,8 +669,8 @@ elif page == "Supply Chain":
             colorscale=color_scale,
             marker_line_color='rgba(255,255,255,0.1)', # Faint borders
             marker_line_width=1,
-            zmin=min(z_vals),
-            zmax=max(z_vals),
+            zmin=min(z_vals) if z_vals else 0, # Prevent error if empty
+            zmax=max(z_vals) if z_vals else 1,
             colorbar_title=label,
             colorbar=dict(
                 x=0.01, # Left aligned
