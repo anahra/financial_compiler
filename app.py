@@ -761,9 +761,23 @@ elif page == "Supply Chain":
         return lats + offset, lons
 
     # Plot Flows (Curved Lines)
+    added_legend_groups = set()
+    
     for flow in map_flows:
         src_lat, src_lon = flow['src']['lat'], flow['src']['lon']
         dst_lat, dst_lon = flow['dst']['lat'], flow['dst']['lon']
+        
+        # Determine Flow Type for Legend
+        flow_name = "Other Flows"
+        if flow['color'] == "#ef4444":  # Red
+            flow_name = "Plant → DC Volume"
+        elif flow['color'] == "#3b82f6": # Blue
+            flow_name = "DC → Customer Volume"
+            
+        show_legend = False
+        if flow_name not in added_legend_groups:
+            show_legend = True
+            added_legend_groups.add(flow_name)
         
         # Generate curve points
         curve_lat, curve_lon = get_curve_points(src_lat, src_lon, dst_lat, dst_lon)
@@ -779,7 +793,9 @@ elif page == "Supply Chain":
             opacity=0.6, # Slightly increased opacity for visibility
             hoverinfo='text',
             text=f"Flow: {flow['vol']:.1f}M",
-            showlegend=False
+            name=flow_name,
+            legendgroup=flow_name,
+            showlegend=show_legend
         ))
 
     fig_map.update_layout(
