@@ -643,55 +643,6 @@ elif page == "Supply Chain":
                 text=f"<b>{lane['name']}</b><br>High Volume Commercial Lane"
             ))
 
-
-
-    # --- Retail Overlays (Independent Layer) ---
-    if retailers_overlay:
-        colors = {
-            "Costco": "cyan", 
-            "Walmart": "blue", 
-            "Target": "red", 
-            "Kroger": "purple",
-            "Kroger Subsidiaries": "#d946ef" # Fuchsia/Magenta
-        }
-        
-        # Helper to load data dynamically
-        import utils.real_retail_data as rrd
-        
-        # Sampling Function (20%) - Cached to prevent flicker
-        def get_sample(retailer_name, locations, pct=0.2):
-            key = f"sample_{retailer_name}"
-            # Check if cache exists and length matches (simple validation)
-            if key not in st.session_state:
-                k = int(len(locations) * pct)
-                st.session_state[key] = random.sample(locations, k)
-            return st.session_state[key]
-
-        for retailer in retailers_overlay:
-            if retailer == "Costco":
-                sample_pairs = get_sample("Costco", rrd.COSTCO_LOCATIONS)
-            elif retailer == "Walmart":
-                sample_pairs = get_sample("Walmart", rrd.WALMART_LOCATIONS)
-            elif retailer == "Target":
-                sample_pairs = get_sample("Target", rrd.TARGET_LOCATIONS)
-            elif retailer == "Kroger":
-                sample_pairs = get_sample("Kroger", rrd.KROGER_LOCATIONS)
-            elif retailer == "Kroger Subsidiaries":
-                sample_pairs = get_sample("KrogerSubs", rrd.KROGER_SUB_LOCATIONS)
-            else:
-                sample_pairs = []
-
-            if sample_pairs:
-                fig_map.add_trace(go.Scattergeo(
-                    lat=[p[0] for p in sample_pairs],
-                    lon=[p[1] for p in sample_pairs],
-                    mode='markers',
-                    marker=dict(size=3, color=colors[retailer], opacity=0.7),
-                    name=f"{retailer} (20% Sample)",
-                    hoverinfo='text',
-                    text=[f"{retailer} Store" for _ in sample_pairs]
-                ))
-
     if overlay_driver != "None":
         
         # A. State Level Choropleth
@@ -873,6 +824,56 @@ elif page == "Supply Chain":
             showlegend=show_legend,
             uid=f"static_flow_{i}" # Unique stable ID for each arrow
         ))
+
+    # --- Retail Overlays (Independent Layer) - Moved to End ---
+    if retailers_overlay:
+        colors = {
+            "Costco": "cyan", 
+            "Walmart": "blue", 
+            "Target": "red", 
+            "Kroger": "purple",
+            "Kroger Subsidiaries": "#d946ef" # Fuchsia/Magenta
+        }
+        
+        # Helper to load data dynamically
+        import utils.real_retail_data as rrd
+        import random # Ensure random is available
+        
+        # Sampling Function (20%) - Cached to prevent flicker
+        def get_sample(retailer_name, locations, pct=0.2):
+            key = f"sample_{retailer_name}"
+            # Check if cache exists and length matches (simple validation)
+            if key not in st.session_state:
+                k = int(len(locations) * pct)
+                st.session_state[key] = random.sample(locations, k)
+            return st.session_state[key]
+
+        for retailer in retailers_overlay:
+            if retailer == "Costco":
+                sample_pairs = get_sample("Costco", rrd.COSTCO_LOCATIONS)
+            elif retailer == "Walmart":
+                sample_pairs = get_sample("Walmart", rrd.WALMART_LOCATIONS)
+            elif retailer == "Target":
+                sample_pairs = get_sample("Target", rrd.TARGET_LOCATIONS)
+            elif retailer == "Kroger":
+                sample_pairs = get_sample("Kroger", rrd.KROGER_LOCATIONS)
+            elif retailer == "Kroger Subsidiaries":
+                sample_pairs = get_sample("KrogerSubs", rrd.KROGER_SUB_LOCATIONS)
+            else:
+                sample_pairs = []
+
+            if sample_pairs:
+                lats = [x[0] for x in sample_pairs]
+                lons = [x[1] for x in sample_pairs]
+                
+                fig_map.add_trace(go.Scattergeo(
+                    lon=lons,
+                    lat=lats,
+                    mode='markers',
+                    marker=dict(size=3, color=colors[retailer], opacity=0.5), # Small subtle dots
+                    name=retailer,
+                    uid=f"retail_{retailer}" # Explicit UID for robustness
+                ))
 
     fig_map.update_layout(
         margin={"r":0,"t":0,"l":0,"b":0},
