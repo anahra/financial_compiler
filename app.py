@@ -994,6 +994,84 @@ elif page == "Supply Chain":
     fig_sankey.update_layout(title_text="Estimated Production Flow (Millions of Units)", font_size=10, height=600)
     st.plotly_chart(fig_sankey, use_container_width=True)
 
+    # --- Retailer Presence Summary Table ---
+    st.markdown("##### Retailer Regional Presence Summary")
+    
+    # 1. Define Regional Buckets based on the 23 demand centers
+    # Logic: Map each store to the nearest Metro, then Metro to Region
+    metro_to_region = {
+        "Los Angeles, CA": "West", "San Diego, CA": "West", "Seattle, WA": "West", 
+        "Vancouver, BC": "West", "Salt Lake City, UT": "West", "Phoenix, AZ": "West", "Denver, CO": "West",
+        "Dallas-Fort Worth, TX": "South", "Houston, TX": "South", "San Antonio, TX": "South", "Memphis, TN": "South",
+        "Chicago, IL": "Midwest", "Detroit, MI": "Midwest", "Indianapolis, IN": "Midwest", "Columbus, OH": "Midwest",
+        "Nashville, TN": "South", "Atlanta, GA": "South", "Charlotte, NC": "South", 
+        "Jacksonville, FL": "South", "Orlando, FL": "South",
+        "New York, NY": "Northeast", "Philadelphia, PA": "Northeast", "Toronto, ON": "Northeast"
+    }
+
+    retail_data = {
+        "Costco": COSTCO_LOCATIONS,
+        "Walmart": WALMART_LOCATIONS,
+        "Target": TARGET_LOCATIONS,
+        "Kroger": KROGER_LOCATIONS,
+        "Kroger Subsidiaries": KROGER_SUB_LOCATIONS
+    }
+
+    # Helper to find region
+    def get_region(lat, lon):
+        best_dist = 9999
+        best_region = "Other"
+        for m in regions:
+            d = (lat - m['lat'])**2 + (lon - m['lon'])**2 # Squared Euclidean distance (fine for proximity)
+            if d < best_dist:
+                best_dist = d
+                best_region = metro_to_region.get(m['name'], "Other")
+        return best_region
+
+    # Build Summary Data for Pivot
+    data_for_df = []
+    region_names = ["West", "Midwest", "South", "Northeast"]
+    
+    total_locations_all = 0
+    retailer_totals = {}
+
+    for name, locations in retail_data.items():
+        counts = {r: 0 for r in region_names}
+        for loc in locations:
+            r = get_region(loc[0], loc[1])
+            if r in counts:
+                counts[r] += 1
+        
+        row_total = sum(counts.values())
+        total_locations_all += row_total
+        retailer_totals[name] = row_total
+        
+        row_dict = {"Retailer": name}
+        for r in region_names:
+            pct = (counts[r] / row_total * 100) if row_total > 0 else 0
+            row_dict[f"{r} (%)"] = f"{pct:.1f}%"
+        row_dict["Total Stores"] = row_total
+        data_for_df.append(row_dict)
+
+    # Calculate Regional Totals
+    regional_counts = {r: 0 for r in region_names}
+    for name, locations in retail_data.items():
+        for loc in locations:
+            r = get_region(loc[0], loc[1])
+            if r in regional_counts:
+                regional_counts[r] += 1
+
+    total_row = {"Retailer": "**GRAND TOTAL**"}
+    for r in region_names:
+        total_pct = (regional_counts[r] / total_locations_all * 100) if total_locations_all > 0 else 0
+        total_row[f"{r} (%)"] = f"**{total_pct:.1f}%**"
+    total_row["Total Stores"] = f"**{total_locations_all}**"
+    data_for_df.append(total_row)
+
+    df_pivot = pd.DataFrame(data_for_df)
+    st.table(df_pivot)
+    st.caption("Prevalence % indicates the weight of each region within the retailer's total US footprint.")
+
     # --- Sources Footer ---
     st.markdown("---")
     st.caption("**Data Sources:**")
