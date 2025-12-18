@@ -831,10 +831,9 @@ elif page == "Supply Chain":
     import utils.real_retail_data as rrd
     import random # Ensure random is available
     
-    # Sampling Function (20%) - Cached to prevent flicker
+    # Sampling Function - Cached to prevent flicker
     def get_sample(retailer_name, locations, pct=0.2):
-        key = f"sample_{retailer_name}"
-        # Check if cache exists and length matches (simple validation)
+        key = f"sample_{retailer_name}_{pct}" # Key now includes percentage
         if key not in st.session_state:
             k = int(len(locations) * pct)
             st.session_state[key] = random.sample(locations, k)
