@@ -419,12 +419,14 @@ elif page == "Supply Chain":
     st.sidebar.markdown("---")
     st.sidebar.markdown("**Regional Mixing Centers**") # Smaller bold title
     default_dcs = [
-        {"name": "Redlands, CA", "lat": 34.0556, "lon": -117.1825, "role": "West Coast Mega DC"},
-        {"name": "Wilmer, TX", "lat": 32.6065, "lon": -96.6908, "role": "South/Central Hub"},
-        {"name": "McDonough, GA", "lat": 33.4473, "lon": -84.1469, "role": "Southeast Logistics Hub"},
-        {"name": "New Milford, CT", "lat": 41.5770, "lon": -73.4079, "role": "Northeast Satellite"},
-        {"name": "DuPont, WA", "lat": 47.0989, "lon": -122.6375, "role": "Northwest Regional DC"},
-        {"name": "Mississauga, ON", "lat": 43.5890, "lon": -79.6441, "role": "Canada Primary DC"}
+        {"name": "Redlands, CA", "lat": 34.0556, "lon": -117.1825, "role": "Major hub for Southern California and the Pacific Southwest."},
+        {"name": "Coppell / Mesquite, TX", "lat": 32.9546, "lon": -97.0150, "role": "Main distribution staging for products made in Paris, TX."},
+        {"name": "McDonough, GA", "lat": 33.4473, "lon": -84.1469, "role": "Strategic entry point for the Southeast US."},
+        {"name": "Pittston / Perry, PA", "lat": 41.3259, "lon": -75.7913, "role": "High-volume hub serving the New York and Philadelphia corridors."},
+        {"name": "Kent / Auburn, WA", "lat": 47.3809, "lon": -122.2348, "role": "Distribution point for the Northwest US."},
+        {"name": "Toronto (Vaughan/Mississauga)", "lat": 43.5890, "lon": -79.6441, "role": "Primary gateway for all diaper imports into the Canadian market."},
+        {"name": "Romeoville, IL", "lat": 41.6475, "lon": -88.0895, "role": "Primary hub for the Chicago area and Great Lakes region."},
+        {"name": "New Century, KS", "lat": 38.8239, "lon": -94.8913, "role": "Pivot point for cross-country inventory balancing."}
     ]
     
     # Define Regional Demand Centers of Gravity (Population Weighted)
@@ -468,61 +470,61 @@ elif page == "Supply Chain":
     # Flow Structure: {'start_lat': ..., 'start_lon': ..., 'end_lat': ..., 'end_lon': ..., 'vol': ...}
     map_flows = []
     
-    # Note: Using factory_configs to get dynamic volume
-    # Mapping back to the lists might be tricky if order changed, but we kept order for active ones.
-    # For simplicity in this demo, accessing by index for the active ones (Beech=0, Ogden=1, Paris=2)
-    # But factory_configs might be shorter if inactive filtered? No, we appended all.
-    
     # 1. Factory to DC Flows (Inter-Network)
-    # Ogden (West Hub) -> Redlands (West DC) + DuPont (NW)
+    # Ogden (West Hub) -> Redlands (West DC) + Kent (NW)
     f_ogden = factory_configs[1]
     map_flows.append({"src": f_ogden, "dst": default_dcs[0], "vol": f_ogden['volume']*0.6, "color": "#ef4444"}) # -> Redlands
-    map_flows.append({"src": f_ogden, "dst": default_dcs[4], "vol": f_ogden['volume']*0.3, "color": "#ef4444"}) # -> DuPont
+    map_flows.append({"src": f_ogden, "dst": default_dcs[4], "vol": f_ogden['volume']*0.3, "color": "#ef4444"}) # -> Kent
     
-    # Paris (South Central Hub) -> Wilmer (Dallas) + McDonough (ATL)
+    # Paris (South Central Hub) -> Coppell (Staging) + Romeoville (Midwest) + New Century (Central)
     f_paris = factory_configs[2]
-    map_flows.append({"src": f_paris, "dst": default_dcs[1], "vol": f_paris['volume']*0.6, "color": "#ef4444"}) # -> Wilmer
-    map_flows.append({"src": f_paris, "dst": default_dcs[2], "vol": f_paris['volume']*0.3, "color": "#ef4444"}) # -> McDonough
+    map_flows.append({"src": f_paris, "dst": default_dcs[1], "vol": f_paris['volume']*0.5, "color": "#ef4444"}) # -> Coppell
+    map_flows.append({"src": f_paris, "dst": default_dcs[6], "vol": f_paris['volume']*0.3, "color": "#ef4444"}) # -> Romeoville
+    map_flows.append({"src": f_paris, "dst": default_dcs[7], "vol": f_paris['volume']*0.2, "color": "#ef4444"}) # -> New Century
     
-    # Beech Island (East Hub) -> McDonough + New Milford + Mississauga (Canada)
+    # Beech Island (East Hub) -> McDonough + Pittston + Mississauga (Canada)
     f_beech = factory_configs[0]
     map_flows.append({"src": f_beech, "dst": default_dcs[2], "vol": f_beech['volume']*0.3, "color": "#ef4444"}) # -> McDonough
-    map_flows.append({"src": f_beech, "dst": default_dcs[3], "vol": f_beech['volume']*0.4, "color": "#ef4444"}) # -> New Milford
+    map_flows.append({"src": f_beech, "dst": default_dcs[3], "vol": f_beech['volume']*0.4, "color": "#ef4444"}) # -> Pittston
     map_flows.append({"src": f_beech, "dst": default_dcs[5], "vol": f_beech['volume']*0.2, "color": "#ef4444"}) # -> Mississauga
     
     # 2. DC to Region CoG Flows (Last Mile)
     
-    # Redlands (West DC) -> LA, SD, Phoenix, SLC, Denver (Partial)
+    # Redlands (West DC) -> LA, SD, Phoenix, SLC
     map_flows.append({"src": default_dcs[0], "dst": regions[0], "vol": 25, "color": "#3b82f6"}) # -> LA
     map_flows.append({"src": default_dcs[0], "dst": regions[1], "vol": 12, "color": "#3b82f6"}) # -> SD
     map_flows.append({"src": default_dcs[0], "dst": regions[5], "vol": 15, "color": "#3b82f6"}) # -> Phoenix
     map_flows.append({"src": default_dcs[0], "dst": regions[4], "vol": 8, "color": "#3b82f6"})  # -> SLC
     
-    # DuPont (NW DC) -> Seattle, Vancouver, SLC (Partial)
+    # Kent (NW DC) -> Seattle, Vancouver
     map_flows.append({"src": default_dcs[4], "dst": regions[2], "vol": 18, "color": "#3b82f6"}) # -> Seattle
     map_flows.append({"src": default_dcs[4], "dst": regions[3], "vol": 10, "color": "#3b82f6"}) # -> Vancouver
     
-    # Wilmer (South DC) -> DFW, Houston, San Antonio, Memphis, Denver, Chicago (Long Haul)
+    # Coppell (South DC) -> DFW, Houston, San Antonio
     map_flows.append({"src": default_dcs[1], "dst": regions[7], "vol": 25, "color": "#3b82f6"}) # -> DFW
     map_flows.append({"src": default_dcs[1], "dst": regions[8], "vol": 20, "color": "#3b82f6"}) # -> Houston
     map_flows.append({"src": default_dcs[1], "dst": regions[9], "vol": 12, "color": "#3b82f6"}) # -> San Antonio
-    map_flows.append({"src": default_dcs[1], "dst": regions[6], "vol": 10, "color": "#3b82f6"}) # -> Denver
-    map_flows.append({"src": default_dcs[1], "dst": regions[11], "vol": 15, "color": "#3b82f6"}) # -> Chicago
     
-    # McDonough (SE DC) -> Atlanta, Charlotte, Nashville, JAX, Orlando, Memphis, Indy
+    # Romeoville (Midwest DC) -> Chicago, Detroit, Indy, Columbus
+    map_flows.append({"src": default_dcs[6], "dst": regions[11], "vol": 20, "color": "#3b82f6"}) # -> Chicago
+    map_flows.append({"src": default_dcs[6], "dst": regions[12], "vol": 12, "color": "#3b82f6"}) # -> Detroit
+    map_flows.append({"src": default_dcs[6], "dst": regions[13], "vol": 10, "color": "#3b82f6"}) # -> Indy
+    map_flows.append({"src": default_dcs[6], "dst": regions[14], "vol": 10, "color": "#3b82f6"}) # -> Columbus
+    
+    # McDonough (SE DC) -> Atlanta, Charlotte, Nashville, JAX, Orlando
     map_flows.append({"src": default_dcs[2], "dst": regions[16], "vol": 25, "color": "#3b82f6"}) # -> Atlanta
     map_flows.append({"src": default_dcs[2], "dst": regions[17], "vol": 15, "color": "#3b82f6"}) # -> Charlotte
     map_flows.append({"src": default_dcs[2], "dst": regions[15], "vol": 12, "color": "#3b82f6"}) # -> Nashville
     map_flows.append({"src": default_dcs[2], "dst": regions[18], "vol": 10, "color": "#3b82f6"}) # -> JAX
     map_flows.append({"src": default_dcs[2], "dst": regions[19], "vol": 12, "color": "#3b82f6"}) # -> Orlando
-    map_flows.append({"src": default_dcs[2], "dst": regions[10], "vol": 8, "color": "#3b82f6"})  # -> Memphis
-    map_flows.append({"src": default_dcs[2], "dst": regions[13], "vol": 10, "color": "#3b82f6"}) # -> Indy
     
-    # New Milford (NE DC) -> NYC, Philly, Detroit, Columbus
+    # Pittston (NE DC) -> NYC, Philly
     map_flows.append({"src": default_dcs[3], "dst": regions[20], "vol": 30, "color": "#3b82f6"}) # -> NYC
     map_flows.append({"src": default_dcs[3], "dst": regions[21], "vol": 20, "color": "#3b82f6"}) # -> Philly
-    map_flows.append({"src": default_dcs[3], "dst": regions[12], "vol": 12, "color": "#3b82f6"}) # -> Detroit
-    map_flows.append({"src": default_dcs[3], "dst": regions[14], "vol": 10, "color": "#3b82f6"}) # -> Columbus
+    
+    # New Century (Central Balancing) -> Denver, Memphis
+    map_flows.append({"src": default_dcs[7], "dst": regions[6], "vol": 10, "color": "#3b82f6"}) # -> Denver
+    map_flows.append({"src": default_dcs[7], "dst": regions[10], "vol": 8, "color": "#3b82f6"}) # -> Memphis
     
     # Mississauga -> Toronto
     map_flows.append({"src": default_dcs[5], "dst": regions[22], "vol": 15, "color": "#3b82f6"}) # -> Toronto
