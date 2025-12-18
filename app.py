@@ -18,7 +18,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-from utils.costco_locations import COSTCO_LOCATIONS
+from utils.retail_locations import COSTCO_LOCATIONS, WALMART_LOCATIONS, TARGET_LOCATIONS
 
 # Custom CSS to maximize width and reduce padding
 st.markdown("""
@@ -537,7 +537,7 @@ elif page == "Supply Chain":
     st.markdown("##### Retail Network Overlays")
     retailers_overlay = st.multiselect(
         "Select Retail Partners",
-        ["Costco"],
+        ["Costco", "Walmart", "Target"],
         default=[]
     )
 
@@ -651,6 +651,32 @@ elif page == "Supply Chain":
             name='Costco Retail Stores',
             hoverinfo='text',
             text=["Costco Retail Store" for _ in COSTCO_LOCATIONS]
+        ))
+    
+    if "Walmart" in retailers_overlay:
+        wlats = [loc[0] for loc in WALMART_LOCATIONS]
+        wlons = [loc[1] for loc in WALMART_LOCATIONS]
+        fig_map.add_trace(go.Scattergeo(
+            lon=wlons,
+            lat=wlats,
+            mode='markers',
+            marker=dict(size=4, color='#0071CE', symbol='circle', opacity=0.7), # Walmart Blue
+            name='Walmart Stores',
+            hoverinfo='text',
+            text=["Walmart Store" for _ in WALMART_LOCATIONS]
+        ))
+
+    if "Target" in retailers_overlay:
+        tlats = [loc[0] for loc in TARGET_LOCATIONS]
+        tlons = [loc[1] for loc in TARGET_LOCATIONS]
+        fig_map.add_trace(go.Scattergeo(
+            lon=tlons,
+            lat=tlats,
+            mode='markers',
+            marker=dict(size=5, color='#CC0000', symbol='circle-dot', line=dict(width=1, color='white')), # Target Red
+            name='Target Stores',
+            hoverinfo='text',
+            text=["Target Store" for _ in TARGET_LOCATIONS]
         ))
 
     if overlay_driver != "None":
