@@ -18,7 +18,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-from utils.retail_locations import COSTCO_LOCATIONS, WALMART_LOCATIONS, TARGET_LOCATIONS
+from utils.real_retail_data import COSTCO_LOCATIONS, WALMART_LOCATIONS, TARGET_LOCATIONS
 
 # Custom CSS to maximize width and reduce padding
 st.markdown("""
