@@ -3,6 +3,7 @@ import pandas as pd
 import plotly.graph_objects as go
 import pydeck as pdk
 import os
+import random
 from utils.styles import load_css
 from utils.data_loader import COMPANIES, get_company_info, get_financials
 from utils.rag_engine import RAGEngine
