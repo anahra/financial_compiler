@@ -60,6 +60,22 @@ def generate_distributed_points(center_lat, center_lon, n_points, spread_deg):
         points.append((lat, lon))
     return points
 
+def generate_land_points(n_points):
+    """Generate random points roughly within US Land bounds (simple box filter)."""
+    points = []
+    while len(points) < n_points:
+        lat = random.uniform(25, 49)
+        lon = random.uniform(-125, -67)
+        # Simple exclusion boxes to avoid deep ocean (Approximate)
+        # Gulf of Mexico exclusion
+        if lat < 30 and lon > -95 and lon < -80:
+            continue
+        # Atlantic Ocean exclusion (rough diagonal cut)
+        if lat < 35 and lon > -75:
+            continue
+        points.append((lat, lon))
+    return points
+
 # US Population Centers (Lat, Lon) to better anchor the random distribution
 # This provides the "Unbiased" regional view the user asked for.
 regions = [
@@ -124,12 +140,9 @@ for lat, lon, density_factor in regions:
 
 # Rural/Gap Fill (Random scatter in US bounds)
 # Lat: 25-49, Lon: -125 to -67
-for _ in range(300): # Walmart rural fill
-    WALMART_LOCATIONS.append((random.uniform(28, 48), random.uniform(-120, -75)))
-
-for _ in range(50): # Target rural/suburban fill
-    TARGET_LOCATIONS.append((random.uniform(28, 48), random.uniform(-120, -75)))
-    
-for _ in range(20): # Costco rare fill
-    COSTCO_LOCATIONS.append((random.uniform(28, 48), random.uniform(-120, -75)))
+# Rural/Gap Fill (Random scatter in US bounds)
+# Lat: 25-49, Lon: -125 to -67
+WALMART_LOCATIONS.extend(generate_land_points(300))
+TARGET_LOCATIONS.extend(generate_land_points(50))
+COSTCO_LOCATIONS.extend(generate_land_points(20))
 

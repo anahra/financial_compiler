@@ -644,7 +644,7 @@ elif page == "Supply Chain":
     # --- Retail Overlays (Independent Layer) ---
     # Define Brand Styles
     retail_styles = {
-        "Costco": {"color": "#00205B", "name": "Costco", "data": COSTCO_LOCATIONS},
+        "Costco": {"color": "#06b6d4", "name": "Costco", "data": COSTCO_LOCATIONS}, # Cyan for better visibility
         "Walmart": {"color": "#0071CE", "name": "Walmart", "data": WALMART_LOCATIONS},
         "Target": {"color": "#CC0000", "name": "Target", "data": TARGET_LOCATIONS}
     }
