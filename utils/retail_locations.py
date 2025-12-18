@@ -52,12 +52,46 @@ def parse_costco(content):
 
 import random
 
+def is_valid_us_land(lat, lon):
+    """Check if point is roughly within US land boundaries, excluding oceans."""
+    # Hard bounds
+    if not (24.5 <= lat <= 49.5 and -125.0 <= lon <= -66.9):
+        return False
+        
+    # Exclude Atlantic Ocean deep water
+    # Below NC (Lat < 35), coast recedes West. Exclude points East of -75.5 approx
+    if lat < 35.0 and lon > -75.5: return False
+    # Mid-Atlantic (NC to NJ): Slope
+    if 35.0 <= lat < 40.0 and lon > -74.0: return False
+    # New England: Exclude East of -69.5
+    if lat >= 40.0 and lon > -69.5: return False
+    
+    # Exclude Gulf of Mexico
+    if lat < 30.0 and (-95.0 < lon < -82.0): return False
+    
+    # Exclude Pacific Ocean
+    if lat < 35.0 and lon < -120.0: return False # SoCal Coast cut
+    if lat >= 35.0 and lon < -124.0: return False # NorCal/OR/WA Coast cut
+    
+    # Exclude Canada (Roughly Lat > 49 or specific Great Lakes cuts)
+    # Simple Lat > 49 check handles most.
+    
+    return True
+
 def generate_distributed_points(center_lat, center_lon, n_points, spread_deg):
     points = []
-    for _ in range(n_points):
+    attempts = 0
+    max_attempts = n_points * 10
+    
+    while len(points) < n_points and attempts < max_attempts:
+        attempts += 1
         lat = center_lat + (random.random() - 0.5) * spread_deg
         lon = center_lon + (random.random() - 0.5) * spread_deg
-        points.append((lat, lon))
+        
+        if is_valid_us_land(lat, lon):
+            points.append((lat, lon))
+            
+    # Fallback if strict filtering is too aggressive (return whatever we got)
     return points
 
 def generate_land_points(n_points):
@@ -136,7 +170,7 @@ for lat, lon, density_factor in regions:
 
     # 3. Walmart: Massive footprint, wider spread around cities
     n_walmart = int(920 * density_factor * 0.6)
-    WALMART_LOCATIONS.extend(generate_distributed_points(lat, lon, n_walmart, 4.0)) # Wider spread (4.0 deg)
+    WALMART_LOCATIONS.extend(generate_distributed_points(lat, lon, n_walmart, 2.5)) # Reduced spread to 2.5 deg to keep tighter to land
 
 # Rural/Gap Fill (Random scatter in US bounds)
 # Lat: 25-49, Lon: -125 to -67
