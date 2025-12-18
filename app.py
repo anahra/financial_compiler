@@ -884,7 +884,7 @@ elif page == "Supply Chain":
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)'
     )
-    st.plotly_chart(fig_map, use_container_width=True)
+
 
     # Render Map in Placeholder (Top)
     map_placeholder.plotly_chart(fig_map, use_container_width=True)
