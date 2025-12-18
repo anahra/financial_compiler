@@ -641,9 +641,37 @@ elif page == "Supply Chain":
 
 
     # --- Retail Overlays (Independent Layer) ---
-                hoverinfo='text',
-                text=[f"{style['name']} Store" for _ in style["data"]]
-            ))
+    if retailers_overlay:
+        colors = {"Costco": "cyan", "Walmart": "blue", "Target": "red"}
+        
+        # Helper to load data dynamically
+        import utils.real_retail_data as rrd
+        
+        # Sampling Function (20%)
+        def get_sample(locations, pct=0.2):
+            k = int(len(locations) * pct)
+            return random.sample(locations, k)
+
+        for retailer in retailers_overlay:
+            if retailer == "Costco":
+                sample_pairs = get_sample(rrd.COSTCO_LOCATIONS)
+            elif retailer == "Walmart":
+                sample_pairs = get_sample(rrd.WALMART_LOCATIONS)
+            elif retailer == "Target":
+                sample_pairs = get_sample(rrd.TARGET_LOCATIONS)
+            else:
+                sample_pairs = []
+
+            if sample_pairs:
+                fig_map.add_trace(go.Scattergeo(
+                    lat=[p[0] for p in sample_pairs],
+                    lon=[p[1] for p in sample_pairs],
+                    mode='markers',
+                    marker=dict(size=3, color=colors[retailer], opacity=0.7),
+                    name=f"{retailer} (20% Sample)",
+                    hoverinfo='text',
+                    text=[f"{retailer} Store" for _ in sample_pairs]
+                ))
 
     if overlay_driver != "None":
         
