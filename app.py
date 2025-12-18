@@ -19,7 +19,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-from utils.real_retail_data import COSTCO_LOCATIONS, WALMART_LOCATIONS, TARGET_LOCATIONS, KROGER_LOCATIONS
+from utils.real_retail_data import COSTCO_LOCATIONS, WALMART_LOCATIONS, TARGET_LOCATIONS, KROGER_LOCATIONS, KROGER_SUB_LOCATIONS
 
 # Custom CSS to maximize width and reduce padding
 st.markdown("""
@@ -603,7 +603,7 @@ elif page == "Supply Chain":
     st.markdown("##### Retail Network Overlays")
     retailers_overlay = st.multiselect(
         "Active Retail Layers:",
-        ["Costco", "Walmart", "Target", "Kroger"],
+        ["Costco", "Walmart", "Target", "Kroger", "Kroger Subsidiaries"],
         default=[],
         key="retail_selector_bottom"
     )
@@ -643,7 +643,13 @@ elif page == "Supply Chain":
 
     # --- Retail Overlays (Independent Layer) ---
     if retailers_overlay:
-        colors = {"Costco": "cyan", "Walmart": "blue", "Target": "red", "Kroger": "purple"}
+        colors = {
+            "Costco": "cyan", 
+            "Walmart": "blue", 
+            "Target": "red", 
+            "Kroger": "purple",
+            "Kroger Subsidiaries": "#d946ef" # Fuchsia/Magenta
+        }
         
         # Helper to load data dynamically
         import utils.real_retail_data as rrd
@@ -662,6 +668,8 @@ elif page == "Supply Chain":
                 sample_pairs = get_sample(rrd.TARGET_LOCATIONS)
             elif retailer == "Kroger":
                 sample_pairs = get_sample(rrd.KROGER_LOCATIONS)
+            elif retailer == "Kroger Subsidiaries":
+                sample_pairs = get_sample(rrd.KROGER_SUB_LOCATIONS)
             else:
                 sample_pairs = []
 

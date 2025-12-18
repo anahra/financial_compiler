@@ -40,7 +40,6 @@ try:
         lines = f.readlines()
     header_line = lines[0].strip()
     headers = next(csv.reader([header_line]))
-    
     try:
         lat_idx = next(i for i, h in enumerate(headers) if 'Address.Latitude' in h)
         lon_idx = next(i for i, h in enumerate(headers) if 'Address.Longitude' in h)
@@ -84,9 +83,10 @@ try:
 except Exception as e:
     print(f"Costco Error: {e}")
 
-# 4. KROGER
-print("Processing Kroger...")
-k_locs = []
+# 4. KROGER (Refined)
+print("Processing Kroger (Splitting Brands)...")
+k_main_locs = []
+k_sub_locs = []
 try:
     with open(os.path.join(data_dir, "kroger_store.csv"), 'r', encoding='utf-8') as f:
         lines = f.readlines()
@@ -95,36 +95,42 @@ try:
         header_line = lines[0].strip()
         headers = next(csv.reader([header_line]))
         
-        # Find indices
         try:
             lat_idx = headers.index('latitude')
             lon_idx = headers.index('longitude')
+            brand_idx = headers.index('brand') # New
             
             for line in lines[1:]:
                 line = line.strip()
                 if not line: continue
-                # Handle whole-row quoting: "val,val,val"
                 if line.startswith('"') and line.endswith('"'):
-                    line = line[1:-1] # Strip outer
-                    line = line.replace('""', '"') # Unescape inner
+                    line = line[1:-1].replace('""', '"')
                 
                 try:
                     row = next(csv.reader([line]))
-                    if len(row) > lon_idx:
+                    if len(row) > max(lon_idx, brand_idx):
                         lat = float(row[lat_idx])
                         lon = float(row[lon_idx])
+                        brand = row[brand_idx].strip().upper()
+                        
                         if 24 <= lat <= 50 and -125 <= lon <= -66:
-                            k_locs.append((round(lat, 5), round(lon, 5)))
+                            coord = (round(lat, 5), round(lon, 5))
+                            
+                            if brand == "JEWELRY":
+                                continue # Filter out
+                            elif brand == "KROGER":
+                                k_main_locs.append(coord)
+                            else:
+                                k_sub_locs.append(coord) # Subsidiaries
                 except (ValueError, StopIteration):
                     continue
         except ValueError:
-             print("Kroger: Could not find 'latitude' or 'longitude' in headers")
+             print("Kroger: headers missing")
              
-    print(f"Kroger: {len(k_locs)} locations")
+    print(f"Kroger Main: {len(k_main_locs)}")
+    print(f"Kroger Subs: {len(k_sub_locs)}")
 except Exception as e:
     print(f"Kroger Error: {e}")
-    import traceback
-    traceback.print_exc()
 
 # --- WRITE OUTPUT ---
 out_path = os.path.join(r"c:\Users\agusn\OneDrive - HEC Paris\Documentos\0_General\PG\financial_compiler\utils", "real_retail_data.py")
@@ -132,5 +138,6 @@ with open(out_path, "w", encoding="utf-8") as f:
     f.write(f"WALMART_LOCATIONS = {w_locs}\n")
     f.write(f"TARGET_LOCATIONS = {t_locs}\n")
     f.write(f"COSTCO_LOCATIONS = {c_locs}\n")
-    f.write(f"KROGER_LOCATIONS = {k_locs}\n")
+    f.write(f"KROGER_LOCATIONS = {k_main_locs}\n")
+    f.write(f"KROGER_SUB_LOCATIONS = {k_sub_locs}\n")
 print("Done.")
