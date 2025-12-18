@@ -18,6 +18,8 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
+from utils.costco_locations import COSTCO_LOCATIONS
+
 # Custom CSS to maximize width and reduce padding
 st.markdown("""
 <style>
@@ -528,7 +530,7 @@ elif page == "Supply Chain":
     st.markdown("##### Demographic Overlays")
     overlay_driver = st.selectbox(
         "Select Map Layer", 
-        ["None", "High Vol. Transport Lanes", "Population (2024 Est.)", "Median Household Income", "Births (2023)", "Avg. Mfg Labor Cost ($/hr)"],
+        ["None", "High Vol. Transport Lanes", "Costco Network", "Population (2024 Est.)", "Median Household Income", "Births (2023)", "Avg. Mfg Labor Cost ($/hr)"],
         index=0
     )
 
@@ -620,6 +622,26 @@ elif page == "Supply Chain":
                 hoverinfo='text',
                 text=f"<b>{lane['name']}</b><br>High Volume Commercial Lane"
             ))
+
+    elif "Costco Network" in overlay_driver:
+        # Plot Costco Locations
+        clats = [loc[0] for loc in COSTCO_LOCATIONS]
+        clons = [loc[1] for loc in COSTCO_LOCATIONS]
+        
+        fig_map.add_trace(go.Scattergeo(
+            lon=clons,
+            lat=clats,
+            mode='markers',
+            marker=dict(
+                size=5, 
+                color='#00205B', # Costco Navy Blue
+                symbol='square', 
+                line=dict(width=1, color='#E31837') # Costco Red Outline
+            ),
+            name='Costco Warehouses',
+            hoverinfo='text',
+            text=["Costco Warehouse" for _ in COSTCO_LOCATIONS]
+        ))
 
     elif overlay_driver != "None":
         
