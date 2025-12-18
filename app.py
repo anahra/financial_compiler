@@ -598,22 +598,6 @@ elif page == "Supply Chain":
     # Create Map (Plotly Scattergeo with Custom Flows)
     # Create Map (Plotly Scattergeo with Custom Flows)
     
-    # Layout: Map (Left) | Controls (Right)
-    col_map, col_controls = st.columns([0.8, 0.2])
-    
-    with col_controls:
-        st.markdown("##### Retail Layers")
-        st.caption("Select retailers to visualize their network distribution.")
-        
-        # Capture Toggle States directly
-        active_retailers = {
-            "Costco": st.toggle("Costco", key="tg_costco"),
-            "Walmart": st.toggle("Walmart", key="tg_walmart"),
-            "Target": st.toggle("Target", key="tg_target"),
-            "Kroger": st.toggle("Kroger", key="tg_kroger"),
-            "Kroger Subsidiaries": st.toggle("Kroger Sub.", key="tg_krogersub")
-        }
-
     # Create Map (Plotly Scattergeo with Custom Flows)
     fig_map = go.Figure()
 
@@ -743,7 +727,7 @@ elif page == "Supply Chain":
         mode='markers+text',
         textposition="top center",
         marker=dict(size=14, color='rgba(0,0,0,0)', symbol='circle', 
-                   line=dict(width=2, color='#f59e0b')), # Amber Outline
+                   line=dict(width=2, color='#f5e0b')), # Amber Outline
         name='Future Capacity',
         uid='static_future_mfg'
     ))
@@ -827,9 +811,10 @@ elif page == "Supply Chain":
             uid=f"static_flow_{i}" # Unique stable ID for each arrow
         ))
 
-    # --- Retail Overlays (Independent Layer) - Fixed Order for Persistence ---
-    # We iterate through ALL retailers and add their traces regardless of selection,
-    # controlling visibility via the 'visible' property. This preserves Trace Indices.
+    # --- Retail Overlays (Independent Layer) - Native Legend Control ---
+    # We add ALL retailer traces to the map, but set them to 'legendonly' (Hidden by default).
+    # The user can toggle them ON via the Plotly Legend. 
+    # This prevents Streamlit re-runs, ensuring perfect state persistence.
     
     fixed_retailer_list = ["Costco", "Walmart", "Target", "Kroger", "Kroger Subsidiaries"]
     
@@ -874,8 +859,6 @@ elif page == "Supply Chain":
             lats = [x[0] for x in sample_pairs]
             lons = [x[1] for x in sample_pairs]
             
-            is_visible = active_retailers.get(retailer, False)
-            
             fig_map.add_trace(go.Scattergeo(
                 lon=lons,
                 lat=lats,
@@ -883,14 +866,21 @@ elif page == "Supply Chain":
                 marker=dict(size=3, color=colors[retailer], opacity=0.5), # Small subtle dots
                 name=retailer,
                 uid=f"retail_{retailer}", # Explicit UID for robustness
-                visible=True if is_visible else False # Toggle Control
+                visible='legendonly' # CLICK LEGEND TO ACTIVATE
             ))
 
     fig_map.update_layout(
         margin={"r":0,"t":0,"l":0,"b":0},
-        height=750, # Slightly reduced height to enhance "wide" feel
+        height=750, 
         showlegend=True,
-        legend=dict(x=0.01, y=0.95, bgcolor="rgba(0,0,0,0)"),
+        # Position legend on the right to mimic "menu" feel
+        legend=dict(
+            x=0.01, 
+            y=0.98, 
+            bgcolor="rgba(0,0,0,0.5)",
+            font=dict(color="white"),
+            itemsizing='constant'
+        ),
         geo=dict(
             scope='north america',
             showland=True,
@@ -901,19 +891,19 @@ elif page == "Supply Chain":
             bgcolor='rgba(0,0,0,0)',
             resolution=50,
             # Ultra-Cinematic "Widescreen" Crop
-            lataxis=dict(range=[24, 52]),  # Tight crop: South TX to Northern US/Border Canada
-            lonaxis=dict(range=[-135, -55]), # Extended East/West
+            lataxis=dict(range=[24, 52]), 
+            lonaxis=dict(range=[-135, -55]),
             projection=dict(type="mercator"), 
             fitbounds=False
         ),
         paper_bgcolor='rgba(0,0,0,0)',
         plot_bgcolor='rgba(0,0,0,0)',
-        uirevision='constant' # Preserves zoom/pan and legend state across updates
+        uirevision='constant'
     )
 
 
-    # Render Map in Left Column
-    col_map.plotly_chart(fig_map, use_container_width=True, key="main_sc_map")
+    # Render Map (Full Width)
+    st.plotly_chart(fig_map, use_container_width=True, key="main_sc_map")
 
 
     st.markdown("##### Material Flow Analysis")
