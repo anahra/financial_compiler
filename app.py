@@ -598,6 +598,15 @@ elif page == "Supply Chain":
     # Create Placeholder for Map (Rendered later to allow controls below)
     map_placeholder = st.empty()
 
+    # Retailer Selection Bar (Rendered visually below the map placeholder)
+    st.markdown("##### Retail Network Overlays")
+    retailers_overlay = st.multiselect(
+        "Active Retail Layers:",
+        ["Costco", "Walmart", "Target"],
+        default=[],
+        key="retail_selector_bottom"
+    )
+
     # Create Map (Plotly Scattergeo with Custom Flows)
     fig_map = go.Figure()
 
@@ -865,22 +874,6 @@ elif page == "Supply Chain":
     )
     st.plotly_chart(fig_map, use_container_width=True)
 
-    # Retailer Selection Bar (Below Map)
-    st.markdown("##### Retail Network Overlays")
-    # Use columns to create a horizontal 'button-like' feel, though multiselect is standard
-    # To truly make them 'always there' buttons, we'd need session state toggle logic.
-    # For now, placing the multiselect prominently below fits the requested flow better than hidden above.
-    retailers_overlay = st.multiselect(
-        "Active Retail Layers:",
-        ["Costco", "Walmart", "Target"],
-        default=[],
-        key="retail_selector_bottom" # Unique key
-    )
-    # Note: Logic for map needs to read this NEW variable.
-    # Since Streamlit reruns script top-to-bottom, defining this AFTER the map code means the map won't see it until next rerun.
-    # CRITICAL FIX: We must define the widgets BEFORE the map code, or use a callback/session state.
-    # BUT, the user explicitly asked to "move the retailer bar below".
-    # In Streamlit, to have a control BELOW affect a chart ABOVE, we must put the control in a container that renders later? No, that's not how it works.
     # Render Map in Placeholder (Top)
     map_placeholder.plotly_chart(fig_map, use_container_width=True)
 
