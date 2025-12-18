@@ -777,7 +777,8 @@ elif page == "Supply Chain":
             symbol='circle', 
             line=dict(width=2, color='white')
         ),
-        name='Active Manufacturing'
+        name='Active Manufacturing',
+        uid='static_active_mfg'
     ))
     
     # Future Mfg (Hollow Circles)
@@ -790,7 +791,8 @@ elif page == "Supply Chain":
         textposition="top center",
         marker=dict(size=14, color='rgba(0,0,0,0)', symbol='circle', 
                    line=dict(width=2, color='#f59e0b')), # Amber Outline
-        name='Future Capacity'
+        name='Future Capacity',
+        uid='static_future_mfg'
     ))
 
     # DCs (Blue Diamonds - approximations for "Arc" or distinct shape)
@@ -800,7 +802,8 @@ elif page == "Supply Chain":
         text=[f"<b>{d['name']}</b><br>{d['role']}" for d in default_dcs],
         mode='markers',
         marker=dict(size=12, color='#3b82f6', symbol='diamond', line=dict(width=1, color='white')),
-        name='Distribution Centers'
+        name='Distribution Centers',
+        uid='static_dcs'
     ))
     
     # Regional Demand CoG (Strategic Centers)
@@ -810,7 +813,8 @@ elif page == "Supply Chain":
         text=[r['name'] for r in regions],
         mode='markers',
         marker=dict(size=8, color='#10b981', symbol='x', line=dict(width=1, color='white')), # Emerald 'X'
-        name='Regional Demand CoG'
+        name='Regional Demand CoG',
+        uid='static_regions_cog'
     ))
 
     # --- 2. Curved Flow Generation ---
@@ -834,7 +838,7 @@ elif page == "Supply Chain":
     # Plot Flows (Curved Lines)
     added_legend_groups = set()
     
-    for flow in map_flows:
+    for i, flow in enumerate(map_flows):
         src_lat, src_lon = flow['src']['lat'], flow['src']['lon']
         dst_lat, dst_lon = flow['dst']['lat'], flow['dst']['lon']
         
@@ -866,7 +870,8 @@ elif page == "Supply Chain":
             text=f"Flow: {flow['vol']:.1f}M",
             name=flow_name,
             legendgroup=flow_name,
-            showlegend=show_legend
+            showlegend=show_legend,
+            uid=f"static_flow_{i}" # Unique stable ID for each arrow
         ))
 
     fig_map.update_layout(
