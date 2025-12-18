@@ -84,7 +84,7 @@ except Exception as e:
     print(f"Costco Error: {e}")
 
 # 4. KROGER (Refined)
-print("Processing Kroger (Splitting Brands)...")
+print("Processing Kroger (Splitting Brands & Filtering Jewelry)...")
 k_main_locs = []
 k_sub_locs = []
 try:
@@ -98,7 +98,12 @@ try:
         try:
             lat_idx = headers.index('latitude')
             lon_idx = headers.index('longitude')
-            brand_idx = headers.index('brand') # New
+            brand_idx = headers.index('brand')
+            type_idx = headers.index('loc_type') # New
+            
+            excluded_count = 0
+            filtered_samples = []
+            seen_types = set()
             
             for line in lines[1:]:
                 line = line.strip()
@@ -108,17 +113,20 @@ try:
                 
                 try:
                     row = next(csv.reader([line]))
-                    if len(row) > max(lon_idx, brand_idx):
+                    if len(row) > max(lon_idx, brand_idx, type_idx):
                         lat = float(row[lat_idx])
                         lon = float(row[lon_idx])
                         brand = row[brand_idx].strip().upper()
+                        ltype = row[type_idx].strip().upper()
                         
+                        # FILTER: Exclude Jewelry (Brand 'JEWELRY' or Type 'J')
+                        if brand == "JEWELRY" or ltype == "J":
+                            continue
+                            
                         if 24 <= lat <= 50 and -125 <= lon <= -66:
                             coord = (round(lat, 5), round(lon, 5))
                             
-                            if brand == "JEWELRY":
-                                continue # Filter out
-                            elif brand == "KROGER":
+                            if brand == "KROGER":
                                 k_main_locs.append(coord)
                             else:
                                 k_sub_locs.append(coord) # Subsidiaries
