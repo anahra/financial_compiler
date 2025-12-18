@@ -653,7 +653,7 @@ elif page == "Supply Chain":
             text=["Costco Retail Store" for _ in COSTCO_LOCATIONS]
         ))
 
-    elif overlay_driver != "None":
+    if overlay_driver != "None":
         
         # A. State Level Choropleth
         # Prepare Data
