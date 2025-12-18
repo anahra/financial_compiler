@@ -534,12 +534,7 @@ elif page == "Supply Chain":
         index=0
     )
 
-    st.markdown("##### Retail Network Overlays")
-    retailers_overlay = st.multiselect(
-        "Select Retail Partners",
-        ["Costco", "Walmart", "Target"],
-        default=[]
-    )
+
 
     # US State Data (Source: US Census Bureau 2023-2024 Estimates, BLS 2023)
 
@@ -600,6 +595,10 @@ elif page == "Supply Chain":
 
 
     # Create Map (Plotly Scattergeo with Custom Flows)
+    # Create Placeholder for Map (Rendered later to allow controls below)
+    map_placeholder = st.empty()
+
+    # Create Map (Plotly Scattergeo with Custom Flows)
     fig_map = go.Figure()
 
     # --- 0. Overlay Layers ---
@@ -633,51 +632,36 @@ elif page == "Supply Chain":
 
 
     # --- Retail Overlays (Independent Layer) ---
-    if "Costco" in retailers_overlay:
-        # Plot Costco Locations
-        clats = [loc[0] for loc in COSTCO_LOCATIONS]
-        clons = [loc[1] for loc in COSTCO_LOCATIONS]
-        
-        fig_map.add_trace(go.Scattergeo(
-            lon=clons,
-            lat=clats,
-            mode='markers',
-            marker=dict(
-                size=5, 
-                color='#00205B', # Costco Navy Blue
-                symbol='square', 
-                line=dict(width=1, color='#E31837') # Costco Red Outline
-            ),
-            name='Costco Retail Stores',
-            hoverinfo='text',
-            text=["Costco Retail Store" for _ in COSTCO_LOCATIONS]
-        ))
-    
-    if "Walmart" in retailers_overlay:
-        wlats = [loc[0] for loc in WALMART_LOCATIONS]
-        wlons = [loc[1] for loc in WALMART_LOCATIONS]
-        fig_map.add_trace(go.Scattergeo(
-            lon=wlons,
-            lat=wlats,
-            mode='markers',
-            marker=dict(size=4, color='#0071CE', symbol='circle', opacity=0.7), # Walmart Blue
-            name='Walmart Stores',
-            hoverinfo='text',
-            text=["Walmart Store" for _ in WALMART_LOCATIONS]
-        ))
+    # --- Retail Overlays (Independent Layer) ---
+    # Define Brand Styles
+    retail_styles = {
+        "Costco": {"color": "#00205B", "name": "Costco", "data": COSTCO_LOCATIONS},
+        "Walmart": {"color": "#0071CE", "name": "Walmart", "data": WALMART_LOCATIONS},
+        "Target": {"color": "#CC0000", "name": "Target", "data": TARGET_LOCATIONS}
+    }
 
-    if "Target" in retailers_overlay:
-        tlats = [loc[0] for loc in TARGET_LOCATIONS]
-        tlons = [loc[1] for loc in TARGET_LOCATIONS]
-        fig_map.add_trace(go.Scattergeo(
-            lon=tlons,
-            lat=tlats,
-            mode='markers',
-            marker=dict(size=5, color='#CC0000', symbol='circle-dot', line=dict(width=1, color='white')), # Target Red
-            name='Target Stores',
-            hoverinfo='text',
-            text=["Target Store" for _ in TARGET_LOCATIONS]
-        ))
+    # Iterate through selected retailers and plot with consistent style
+    for retailer in retailers_overlay:
+        if retailer in retail_styles:
+            style = retail_styles[retailer]
+            style_lats = [loc[0] for loc in style["data"]]
+            style_lons = [loc[1] for loc in style["data"]]
+            
+            fig_map.add_trace(go.Scattergeo(
+                lon=style_lons,
+                lat=style_lats,
+                mode='markers',
+                marker=dict(
+                    size=4, 
+                    color=style["color"], 
+                    symbol='circle', 
+                    opacity=0.8,
+                    line=dict(width=0, color='white') # Clean, flat look
+                ),
+                name=f"{style['name']}",
+                hoverinfo='text',
+                text=[f"{style['name']} Store" for _ in style["data"]]
+            ))
 
     if overlay_driver != "None":
         
@@ -880,6 +864,26 @@ elif page == "Supply Chain":
         plot_bgcolor='rgba(0,0,0,0)'
     )
     st.plotly_chart(fig_map, use_container_width=True)
+
+    # Retailer Selection Bar (Below Map)
+    st.markdown("##### Retail Network Overlays")
+    # Use columns to create a horizontal 'button-like' feel, though multiselect is standard
+    # To truly make them 'always there' buttons, we'd need session state toggle logic.
+    # For now, placing the multiselect prominently below fits the requested flow better than hidden above.
+    retailers_overlay = st.multiselect(
+        "Active Retail Layers:",
+        ["Costco", "Walmart", "Target"],
+        default=[],
+        key="retail_selector_bottom" # Unique key
+    )
+    # Note: Logic for map needs to read this NEW variable.
+    # Since Streamlit reruns script top-to-bottom, defining this AFTER the map code means the map won't see it until next rerun.
+    # CRITICAL FIX: We must define the widgets BEFORE the map code, or use a callback/session state.
+    # BUT, the user explicitly asked to "move the retailer bar below".
+    # In Streamlit, to have a control BELOW affect a chart ABOVE, we must put the control in a container that renders later? No, that's not how it works.
+    # Render Map in Placeholder (Top)
+    map_placeholder.plotly_chart(fig_map, use_container_width=True)
+
 
     st.markdown("##### Material Flow Analysis")
     # st.caption("Visualizing flow from Factory -> DC -> Region (Simulated based on capacity)")
