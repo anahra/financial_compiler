@@ -890,7 +890,8 @@ elif page == "Supply Chain":
             fitbounds=False
         ),
         paper_bgcolor='rgba(0,0,0,0)',
-        plot_bgcolor='rgba(0,0,0,0)'
+        plot_bgcolor='rgba(0,0,0,0)',
+        uirevision='constant' # Preserves zoom/pan and legend state across updates
     )
 
 
