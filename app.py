@@ -641,33 +641,6 @@ elif page == "Supply Chain":
 
 
     # --- Retail Overlays (Independent Layer) ---
-    # --- Retail Overlays (Independent Layer) ---
-    # Define Brand Styles
-    retail_styles = {
-        "Costco": {"color": "#06b6d4", "name": "Costco", "data": COSTCO_LOCATIONS}, # Cyan for better visibility
-        "Walmart": {"color": "#0071CE", "name": "Walmart", "data": WALMART_LOCATIONS},
-        "Target": {"color": "#CC0000", "name": "Target", "data": TARGET_LOCATIONS}
-    }
-
-    # Iterate through selected retailers and plot with consistent style
-    for retailer in retailers_overlay:
-        if retailer in retail_styles:
-            style = retail_styles[retailer]
-            style_lats = [loc[0] for loc in style["data"]]
-            style_lons = [loc[1] for loc in style["data"]]
-            
-            fig_map.add_trace(go.Scattergeo(
-                lon=style_lons,
-                lat=style_lats,
-                mode='markers',
-                marker=dict(
-                    size=4, 
-                    color=style["color"], 
-                    symbol='circle', 
-                    opacity=0.8,
-                    line=dict(width=0, color='white') # Clean, flat look
-                ),
-                name=f"{style['name']}",
                 hoverinfo='text',
                 text=[f"{style['name']} Store" for _ in style["data"]]
             ))
