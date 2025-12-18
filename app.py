@@ -19,7 +19,7 @@ st.set_page_config(
     initial_sidebar_state="expanded"
 )
 
-from utils.real_retail_data import COSTCO_LOCATIONS, WALMART_LOCATIONS, TARGET_LOCATIONS, KROGER_LOCATIONS, KROGER_SUB_LOCATIONS
+from utils.real_retail_data import COSTCO_LOCATIONS, WALMART_LOCATIONS, SAMS_LOCATIONS, TARGET_LOCATIONS, KROGER_LOCATIONS, KROGER_SUB_LOCATIONS
 
 # Custom CSS to maximize width and reduce padding
 st.markdown("""
@@ -817,11 +817,12 @@ elif page == "Supply Chain":
     # The user can toggle them ON via the Plotly Legend. 
     # This prevents Streamlit re-runs, ensuring perfect state persistence.
     
-    fixed_retailer_list = ["Costco", "Walmart", "Target", "Kroger", "Kroger Subsidiaries"]
+    fixed_retailer_list = ["Costco", "Walmart", "Sam's Club", "Target", "Kroger", "Kroger Subsidiaries"]
     
     colors = {
         "Costco": "cyan", 
-        "Walmart": "blue", 
+        "Walmart": "blue",
+        "Sam's Club": "#1e40af", # Deep Blue
         "Target": "red", 
         "Kroger": "purple",
         "Kroger Subsidiaries": "#d946ef"
@@ -847,6 +848,9 @@ elif page == "Supply Chain":
             display_name = f"{retailer} (100%)"
         elif retailer == "Walmart":
             sample_pairs = get_sample("Walmart", rrd.WALMART_LOCATIONS)
+            display_name = f"{retailer} (20% sample)"
+        elif retailer == "Sam's Club":
+            sample_pairs = get_sample("SamsClub", rrd.SAMS_LOCATIONS)
             display_name = f"{retailer} (20% sample)"
         elif retailer == "Target":
             sample_pairs = get_sample("Target", rrd.TARGET_LOCATIONS)
@@ -1012,6 +1016,7 @@ elif page == "Supply Chain":
     retail_data = {
         "Costco": COSTCO_LOCATIONS,
         "Walmart": WALMART_LOCATIONS,
+        "Sam's Club": SAMS_LOCATIONS,
         "Target": TARGET_LOCATIONS,
         "Kroger": KROGER_LOCATIONS,
         "Kroger Subsidiaries": KROGER_SUB_LOCATIONS

@@ -17,20 +17,26 @@ def web_mercator_to_latlon(x, y):
 # --- LOADING ---
 data_dir = r"c:\Users\agusn\OneDrive - HEC Paris\Documentos\0_General\PG\financial_compiler\data\retailers"
 
-# 1. WALMART
-print("Processing Walmart...")
+# 1. WALMART & SAM'S CLUB
+print("Processing Walmart & Sam's Club...")
 w_locs = []
+sams_locs = []
 try:
     df_w = pd.read_csv(os.path.join(data_dir, "walmart.csv"))
     for _, row in df_w.iterrows():
         try:
             lat, lon = web_mercator_to_latlon(row['x'], row['y'])
             if 24 <= lat <= 50 and -125 <= lon <= -66: 
-                w_locs.append((round(lat, 5), round(lon, 5)))
+                coord = (round(lat, 5), round(lon, 5))
+                if str(row.get('Type', '')).strip().upper() == "WHOLESALE":
+                    sams_locs.append(coord)
+                else:
+                    w_locs.append(coord)
         except: continue
     print(f"Walmart: {len(w_locs)} locations")
+    print(f"Sam's Club: {len(sams_locs)} locations")
 except Exception as e:
-    print(f"Walmart Error: {e}")
+    print(f"Walmart/Sams Error: {e}")
 
 # 2. TARGET
 print("Processing Target...")
@@ -144,6 +150,7 @@ except Exception as e:
 out_path = os.path.join(r"c:\Users\agusn\OneDrive - HEC Paris\Documentos\0_General\PG\financial_compiler\utils", "real_retail_data.py")
 with open(out_path, "w", encoding="utf-8") as f:
     f.write(f"WALMART_LOCATIONS = {w_locs}\n")
+    f.write(f"SAMS_LOCATIONS = {sams_locs}\n")
     f.write(f"TARGET_LOCATIONS = {t_locs}\n")
     f.write(f"COSTCO_LOCATIONS = {c_locs}\n")
     f.write(f"KROGER_LOCATIONS = {k_main_locs}\n")
