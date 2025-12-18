@@ -596,17 +596,21 @@ elif page == "Supply Chain":
 
 
     # Create Map (Plotly Scattergeo with Custom Flows)
-    # Create Placeholder for Map (Rendered later to allow controls below)
-    map_placeholder = st.empty()
-
-    # Retailer Selection Bar (Rendered visually below the map placeholder)
-    st.markdown("##### Retail Network Overlays")
-    retailers_overlay = st.multiselect(
-        "Active Retail Layers:",
-        ["Costco", "Walmart", "Target", "Kroger", "Kroger Subsidiaries"],
-        default=[],
-        key="retail_selector_bottom"
-    )
+    # Create Map (Plotly Scattergeo with Custom Flows)
+    
+    # Layout: Map (Left) | Controls (Right)
+    col_map, col_controls = st.columns([0.8, 0.2])
+    
+    with col_controls:
+        st.markdown("##### Retail Layers")
+        st.caption("Select retailers to visualize their network distribution.")
+        
+        retailers_overlay = []
+        if st.toggle("Costco", key="tg_costco"): retailers_overlay.append("Costco")
+        if st.toggle("Walmart", key="tg_walmart"): retailers_overlay.append("Walmart")
+        if st.toggle("Target", key="tg_target"): retailers_overlay.append("Target")
+        if st.toggle("Kroger", key="tg_kroger"): retailers_overlay.append("Kroger")
+        if st.toggle("Kroger Sub.", key="tg_krogersub"): retailers_overlay.append("Kroger Subsidiaries")
 
     # Create Map (Plotly Scattergeo with Custom Flows)
     fig_map = go.Figure()
@@ -886,8 +890,8 @@ elif page == "Supply Chain":
     )
 
 
-    # Render Map in Placeholder (Top)
-    map_placeholder.plotly_chart(fig_map, use_container_width=True)
+    # Render Map in Left Column
+    col_map.plotly_chart(fig_map, use_container_width=True)
 
 
     st.markdown("##### Material Flow Analysis")
