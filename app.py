@@ -808,7 +808,8 @@ elif page == "Supply Chain":
             name=flow_name,
             legendgroup=flow_name,
             showlegend=show_legend,
-            uid=f"static_flow_{i}" # Unique stable ID for each arrow
+            uid=f"static_flow_{i}", # Unique stable ID for each arrow
+            visible='legendonly' # HIDE ARROWS BY DEFAULT
         ))
 
     # --- Retail Overlays (Independent Layer) - Native Legend Control ---
@@ -842,17 +843,24 @@ elif page == "Supply Chain":
     for retailer in fixed_retailer_list:
         # 1. Get Data
         if retailer == "Costco":
-            sample_pairs = get_sample("Costco", rrd.COSTCO_LOCATIONS)
+            # Show all dots for Costco (100%)
+            sample_pairs = get_sample("Costco", rrd.COSTCO_LOCATIONS, pct=1.0)
+            display_name = f"{retailer} (100%)"
         elif retailer == "Walmart":
             sample_pairs = get_sample("Walmart", rrd.WALMART_LOCATIONS)
+            display_name = f"{retailer} (20% sample)"
         elif retailer == "Target":
             sample_pairs = get_sample("Target", rrd.TARGET_LOCATIONS)
+            display_name = f"{retailer} (20% sample)"
         elif retailer == "Kroger":
             sample_pairs = get_sample("Kroger", rrd.KROGER_LOCATIONS)
+            display_name = f"{retailer} (20% sample)"
         elif retailer == "Kroger Subsidiaries":
             sample_pairs = get_sample("KrogerSubs", rrd.KROGER_SUB_LOCATIONS)
+            display_name = f"{retailer} (20% sample)"
         else:
             sample_pairs = []
+            display_name = retailer
 
         # 2. Add Trace (Always!)
         if sample_pairs:
@@ -864,7 +872,7 @@ elif page == "Supply Chain":
                 lat=lats,
                 mode='markers',
                 marker=dict(size=3, color=colors[retailer], opacity=0.5), # Small subtle dots
-                name=retailer,
+                name=display_name,
                 uid=f"retail_{retailer}", # Explicit UID for robustness
                 visible='legendonly' # CLICK LEGEND TO ACTIVATE
             ))
