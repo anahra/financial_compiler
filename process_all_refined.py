@@ -146,13 +146,15 @@ try:
 except Exception as e:
     print(f"Kroger Error: {e}")
 
+import json
+
 # --- WRITE OUTPUT ---
 out_path = os.path.join(r"c:\Users\agusn\OneDrive - HEC Paris\Documentos\0_General\PG\financial_compiler\utils", "real_retail_data.py")
 with open(out_path, "w", encoding="utf-8") as f:
-    f.write(f"WALMART_LOCATIONS = {w_locs}\n")
-    f.write(f"SAMS_LOCATIONS = {sams_locs}\n")
-    f.write(f"TARGET_LOCATIONS = {t_locs}\n")
-    f.write(f"COSTCO_LOCATIONS = {c_locs}\n")
-    f.write(f"KROGER_LOCATIONS = {k_main_locs}\n")
-    f.write(f"KROGER_SUB_LOCATIONS = {k_sub_locs}\n")
-print("Done.")
+    f.write(f"WALMART_LOCATIONS = {json.dumps(w_locs, indent=2)}\n\n")
+    f.write(f"SAMS_LOCATIONS = {json.dumps(sams_locs, indent=2)}\n\n")
+    f.write(f"TARGET_LOCATIONS = {json.dumps(t_locs, indent=2)}\n\n")
+    f.write(f"COSTCO_LOCATIONS = {json.dumps(c_locs, indent=2)}\n\n")
+    f.write(f"KROGER_LOCATIONS = {json.dumps(k_main_locs, indent=2)}\n\n")
+    f.write(f"KROGER_SUB_LOCATIONS = {json.dumps(k_sub_locs, indent=2)}\n")
+print(f"Done. Wrote to {out_path}")
