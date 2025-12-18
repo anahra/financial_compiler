@@ -821,8 +821,8 @@ elif page == "Supply Chain":
     
     colors = {
         "Costco": "cyan", 
-        "Walmart": "blue",
-        "Sam's Club": "#1e40af", # Deep Blue
+        "Walmart": "#3b82f6",     # Lighter Blue
+        "Sam's Club": "#93c5fd",  # Very Light Blue
         "Target": "red", 
         "Kroger": "purple",
         "Kroger Subsidiaries": "#d946ef"
