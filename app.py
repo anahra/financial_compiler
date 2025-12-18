@@ -638,9 +638,9 @@ elif page == "Supply Chain":
                 symbol='square', 
                 line=dict(width=1, color='#E31837') # Costco Red Outline
             ),
-            name='Costco Warehouses',
+            name='Costco Retail Stores',
             hoverinfo='text',
-            text=["Costco Warehouse" for _ in COSTCO_LOCATIONS]
+            text=["Costco Retail Store" for _ in COSTCO_LOCATIONS]
         ))
 
     elif overlay_driver != "None":
