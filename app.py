@@ -530,8 +530,15 @@ elif page == "Supply Chain":
     st.markdown("##### Demographic Overlays")
     overlay_driver = st.selectbox(
         "Select Map Layer", 
-        ["None", "High Vol. Transport Lanes", "Costco Network", "Population (2024 Est.)", "Median Household Income", "Births (2023)", "Avg. Mfg Labor Cost ($/hr)"],
+        ["None", "High Vol. Transport Lanes", "Population (2024 Est.)", "Median Household Income", "Births (2023)", "Avg. Mfg Labor Cost ($/hr)"],
         index=0
+    )
+
+    st.markdown("##### Retail Network Overlays")
+    retailers_overlay = st.multiselect(
+        "Select Retail Partners",
+        ["Costco"],
+        default=[]
     )
 
     # US State Data (Source: US Census Bureau 2023-2024 Estimates, BLS 2023)
@@ -623,7 +630,10 @@ elif page == "Supply Chain":
                 text=f"<b>{lane['name']}</b><br>High Volume Commercial Lane"
             ))
 
-    elif "Costco Network" in overlay_driver:
+
+
+    # --- Retail Overlays (Independent Layer) ---
+    if "Costco" in retailers_overlay:
         # Plot Costco Locations
         clats = [loc[0] for loc in COSTCO_LOCATIONS]
         clons = [loc[1] for loc in COSTCO_LOCATIONS]
