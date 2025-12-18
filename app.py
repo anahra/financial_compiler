@@ -658,22 +658,26 @@ elif page == "Supply Chain":
         # Helper to load data dynamically
         import utils.real_retail_data as rrd
         
-        # Sampling Function (20%)
-        def get_sample(locations, pct=0.2):
-            k = int(len(locations) * pct)
-            return random.sample(locations, k)
+        # Sampling Function (20%) - Cached to prevent flicker
+        def get_sample(retailer_name, locations, pct=0.2):
+            key = f"sample_{retailer_name}"
+            # Check if cache exists and length matches (simple validation)
+            if key not in st.session_state:
+                k = int(len(locations) * pct)
+                st.session_state[key] = random.sample(locations, k)
+            return st.session_state[key]
 
         for retailer in retailers_overlay:
             if retailer == "Costco":
-                sample_pairs = get_sample(rrd.COSTCO_LOCATIONS)
+                sample_pairs = get_sample("Costco", rrd.COSTCO_LOCATIONS)
             elif retailer == "Walmart":
-                sample_pairs = get_sample(rrd.WALMART_LOCATIONS)
+                sample_pairs = get_sample("Walmart", rrd.WALMART_LOCATIONS)
             elif retailer == "Target":
-                sample_pairs = get_sample(rrd.TARGET_LOCATIONS)
+                sample_pairs = get_sample("Target", rrd.TARGET_LOCATIONS)
             elif retailer == "Kroger":
-                sample_pairs = get_sample(rrd.KROGER_LOCATIONS)
+                sample_pairs = get_sample("Kroger", rrd.KROGER_LOCATIONS)
             elif retailer == "Kroger Subsidiaries":
-                sample_pairs = get_sample(rrd.KROGER_SUB_LOCATIONS)
+                sample_pairs = get_sample("KrogerSubs", rrd.KROGER_SUB_LOCATIONS)
             else:
                 sample_pairs = []
 
