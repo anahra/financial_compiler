@@ -727,7 +727,7 @@ elif page == "Supply Chain":
         mode='markers+text',
         textposition="top center",
         marker=dict(size=14, color='rgba(0,0,0,0)', symbol='circle', 
-                   line=dict(width=2, color='#f5e0b')), # Amber Outline
+                   line=dict(width=2, color='#f59e0b')), # Amber Outline
         name='Future Capacity',
         uid='static_future_mfg'
     ))
