@@ -902,7 +902,7 @@ elif page == "Supply Chain":
 
 
     # Render Map in Left Column
-    col_map.plotly_chart(fig_map, use_container_width=True)
+    col_map.plotly_chart(fig_map, use_container_width=True, key="main_sc_map")
 
 
     st.markdown("##### Material Flow Analysis")
