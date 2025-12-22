@@ -707,7 +707,7 @@ elif page == "Supply Chain":
     fig_map.add_trace(go.Scattergeo(
         lon=[f['lon'] for f in active_mfg],
         lat=[f['lat'] for f in active_mfg],
-        text=[f"<b>{f['name']}</b><br>{f['role']}" for f in active_mfg],
+        text=[f"<b>{f['name']}</b>" for f in active_mfg],
         mode='markers+text',
         textposition="top center",
         marker=dict(
@@ -725,7 +725,7 @@ elif page == "Supply Chain":
     fig_map.add_trace(go.Scattergeo(
         lon=[f['lon'] for f in future_mfg],
         lat=[f['lat'] for f in future_mfg],
-        text=[f"<b>{f['name']}</b><br>{f['role']}" for f in future_mfg],
+        text=[f"<b>{f['name']}</b>" for f in future_mfg],
         mode='markers+text',
         textposition="top center",
         marker=dict(size=14, color='rgba(0,0,0,0)', symbol='circle', 
@@ -738,7 +738,7 @@ elif page == "Supply Chain":
     fig_map.add_trace(go.Scattergeo(
         lon=[d['lon'] for d in default_dcs],
         lat=[d['lat'] for d in default_dcs],
-        text=[f"<b>{d['name']}</b><br>{d['role']}" for d in default_dcs],
+        text=[f"<b>{d['name']}</b>" for d in default_dcs],
         mode='markers+text',
         textposition="top center",
         marker=dict(size=12, color='#3b82f6', symbol='diamond', line=dict(width=1, color='white')),
